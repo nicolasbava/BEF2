@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Black Existence Films</title>
 </head>
 <body>
     <!-- HEADER NAVIGATOR -->
     <header>
+        <div></div>
         <h1><a href="#home"><img src="imagenes/LOGO-MENU.png" alt="BLACK EXISTENCE FILMS logo"></a></h1> 
         <input type="checkbox" name="nav--toggle" class="nav--toggle" id="nav--toggle">
         <nav>
@@ -29,6 +30,12 @@
         <label for="nav--toggle" class="nav--toggle-label">
             <span></span>
         </label> 
+
+        <div class="traductor">
+            <span class="es">Es</span>
+            <input type="checkbox" class="check" checked>
+            <span class="en">En</span>
+        </div>
     </header>
     <section class="divisor">
 
@@ -50,7 +57,7 @@
     </section>
 
     <section class="galeria1">
-        <p>aca va la galeria con las carteleras</p>
+        <p>ACA VA GALERIA CARTELERAS</p>
     </section>
 
     <section class="banner2">
@@ -64,9 +71,46 @@
 
     </section>
 
-    <section class="cvWisny" id="cvWisny">
-        <p>cv wisny</p>
-    </section>
+    <!-- <section class="cvWisny" > -->
+        <section class="slider" id="cvWisny">
+            <div class="slider_container container">
+                <img src="./imagenes/assets/arrowi.svg" class="slider_arrow" id="before" alt="">
+                 <section class="slider_body slider_body-show" id="cv1" data-id="1">
+                     <div class="slider_text">
+                         <h2 class="subtitle">ACA VA EL CV DE WISNY</h2>
+                         <p class="slider_review">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi maiores dolores, perferendis consectetur maxime blanditiis error a asperiores </p>
+                     </div>
+                     
+                     <figure class="slider_picture">
+                         <img src="./imagenes/assets/cv1.JPG" class="slider_img" alt="">
+                     </figure>
+                 </section>
+     
+                 <section class="slider_body" data-id="2">
+                     <div class="slider_text">
+                         <h2 class="subtitle">Hola mi nombre es JUAN</h2>
+                         <p class="slider_review">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi maiores dolores, perferendis consectetur maxime blanditiis error a asperiores </p>
+                     </div>
+                     
+                     <figure class="slider_picture">
+                         <img src="./imagenes/assets/cv2.JPG" class="slider_img" alt="">
+                     </figure>
+                 </section>
+                 <section class="slider_body" data-id="3">
+                     <div class="slider_text">
+                         <h2 class="subtitle">Hola mi nombre es PABLO</h2>
+                         <p class="slider_review"> </p>
+                     </div>
+                     
+                     <figure class="slider_picture">
+                         <img src="./imagenes/assets/cv4.jpeg" class="slider_img" alt="">
+                     </figure>
+                 </section>
+     
+                <img src="./imagenes/assets/arrowd.svg" class="slider_arrow" id="after" alt="">
+            </div> 
+         </section>
+    <!-- </section> -->
 
     <section class="afroTV" id="afroTV">
         
@@ -105,5 +149,6 @@
         </div>
     </footer>
 
+    <script src="js/app.js"></script>
 </body>
 </html>

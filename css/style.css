@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+html {
+    scroll-behavior: smooth;
+    /* background: black; */
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+:root {
+    --clr-blanco: white;
+    --clr-negro: black;
+    --clr-naranja: #fe5d02;
+    --ff: 'Libre Franklin', sans-serif;
+}
+
+body {
+   margin: 0;
+   font-family: var(--ff);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5
+ {
+    margin: 0;
+    font-family: var(--ff-title);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+}
+
+p {
+    font-family: var(--ff-paragraph);
+    font-weight: 700;
+    line-height: 1;
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-primary-100);
+    font-family: var(--ff-title);
+}
+
+/* END global variables */
+
+/* START NAV BAR */ 
+/* header h1 {
+    margin-left: 50px;
+} */
+
+header a {
+    text-decoration: none;
+    color: var(--clr-negro);
+}
+
+header h1 a img {
+    max-width: calc(5rem + 3vw);
+    padding-block: 3%;
+}
+
+header {
+    background: var(--clr-negro);
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    color: var(--clr-blanco);
+    display: grid;
+    /* justify-content: space-around; */
+    
+    grid-template-columns: 1fr 1fr 1fr; 
+}
+
+header > * {
+    align-self:center;
+    justify-self:space-between;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--clr-naranja);
+    width: 100%;
+    padding-top: .5rem;
+
+    transform: scale(1, 0);
+    transition: transform 400ms ease-in-out;
+    transform-origin: top;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: var(--clr-negro);
+    text-decoration: none;
+    font-size: 1rem;
+
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+
+}
+
+nav a:hover {
+    color: var(--clr-blanco);
+}
+
+.nav--toggle:checked ~ nav {
+    /* display: block; */
+    transform: scale(1, 1);
+}
+
+.nav--toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 500ms;
+}
+
+.nav--toggle {
+    display: none;
+}
+
+.nav--toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1em;
+}
+
+.nav--toggle-label span,
+.nav--toggle-label span::before,
+.nav--toggle-label span::after {
+    display: block;
+    background: var(--clr-naranja);
+    height: 2px;
+    width: 1.5rem;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav--toggle-label span::before,
+.nav--toggle-label span::after {
+    content: '';
+    position: absolute;
+} 
+
+.nav--toggle-label span::before {
+    bottom: 5px;
+}
+
+.nav--toggle-label span::after {
+    top: 5px;
+}
+
+/* INTERRUPTOR TRADUCCION */
+
+header .traductor {
+    color: var(--clr-naranja);
+}
+
+.es {
+    color: var(--clr-naranja);
+    top: 10px;
+}
+
+.en {
+    color: var(--clr-naranja);
+}
+
+.check {
+    position: relative;
+    width: 50px;
+    top: -4px;
+}
+
+.check:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    background: var(--clr-negro);
+    border-radius: 25px;
+    border: 2px solid var(--clr-naranja);
+
+}
+
+.check:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: var(--clr-negro);
+    border-radius: 25px;
+    transition: 0.25s;
+    border: 2px solid var(--clr-naranja);
+    box-sizing: border-box;
+}
+
+.check:checked:after {
+    background-color: #fff;
+}
+
+.check:checked:after {
+    left: 25px;
+    border: 2px solid var(--clr-naranja);
+
+}
+
+.check:checked:before {
+    background-color: var(--clr-naranja);
+}
+/* CALL TO ACTION */
+.divisor {
+    height: 10vh;
+}
+
+.call {
+    min-height: 90vh;
+    padding-top: calc(14rem + 2vw);
+    display: flex;
+    background: rgba(0, 0, 0, 0.575) url('../imagenes/call/bg1.JPG') no-repeat center;
+    color: var(--clr-blanco);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 4s;
+
+    appearance: inherit;
+    animation-name: animate;
+    animation-direction: alternate-reverse;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: cubic-bezier(0.01, 1.15, 1, 0.99);
+}
+
+@keyframes animate {
+    0% {
+        background-image: url(../imagenes/call/bg2.JPG);
+    }
+    25% {
+        background-image: url(../imagenes/call/bg3.png);
+    }
+    50% {
+        background-image: url(../imagenes/call/bg4.JPG);
+    }
+    75% {
+        background-image: url(../imagenes/call/bg6.JPG);
+    }
+    100% {
+        background-image: url(../imagenes/call/bg7.JPG);
+    }
+}
+
+
+.call .cartel {
+    padding-inline: 5%;
+}
+
+.call .cartel h2 {
+    font-size: calc(1.2rem + 1vw);
+    padding-block: calc(3px + 0.5vh);
+    padding-inline: calc(.5rem + 1vw);
+    background-color: #ff5e00;
+    color: var(--clr-negro);
+    font-weight: 900;
+    margin-bottom: 5px;
+    display: inline-block;
+    
+}
+
+.call .cartel-cartel p {
+    word-spacing: 1.5;
+    line-height: 1.5;
+    padding-top: 1.5rem;
+    margin-right: 2rem;
+    font-weight: 700;
+    font-size: .6rem;
+}
+
+
+
+/* SEGUNDA PARTE - BANNER 1 */
+
+.banner1 {
+    background: url('../imagenes/fondos/FONDO-NEGRO.png') no-repeat center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    color: var(--clr-blanco);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+    padding-block: 4rem;
+    padding-inline: 2rem;
+}
+
+/* GALERIA CARTELERAS */
+
+.galeria1 {
+    background: grey;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* BANNER 2 */
+
+.banner2 {
+    background: url(../imagenes/fondos/FONDO-NARANJA.png);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    color: var(--clr-negro);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+    padding-block: 4rem;
+    padding-inline: 2rem;
+}
+
+/* ESPACIO PUBLICITARIO - REPRODUCTOR AUTOMATICO */
+
+.publicidad {
+    background: grey;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CV WISNY - GALERIA */
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    max-width: 100vw;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider {
+    background-color: #f2f2f2;
+    padding: 40px 0;
+
+}
+
+.slider_container {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
+    gap: 1rem;
+}
+
+.slider_body {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+
+    display: grid;
+    background-color: #f2f2f2;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    transition: opacity 1.5s;
+}
+
+.slider_img {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.slider_text {
+    max-width: 600px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.slider_review {
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.slider_body-show {
+    opacity: 1;
+    pointer-events: unset;
+}
+
+.slider_arrow {
+    cursor: pointer;
+    width: 90%;
+}
+
+.slider_arrow:nth-of-type(2){
+    justify-self: end;
+}
+
+
+
+/* AFRO TV */
+
+.afroTV {
+    background: url(../imagenes/fondos/FONDO-AFRO.png) no-repeat;
+    background-size: cover;
+    display: flex;
+    color: var(--clr-blanco);
+    text-transform: none;
+    padding-block: 5%;
+    padding-inline: 5%;
+    column-width: 30%;
+
+    display:grid;
+    grid-template-columns: 2fr 3fr;
+
+}
+
+.afroTV > div {
+    align-self: center;
+    justify-self: center;
+}
+
+
+/* .afroTV img {
+    max-width: 50%;
+    max-height: 50%;
+} */
+
+/* .afroTV > div {
+    width: 50%;
+    /* padding: 10px; 
+} */
+
+
+/* .afroTV .cartel {
+    width: 50%;
+} */
+
+.afroTV .cartel p {
+    font-size: .9rem;
+}
+
+.galeriaFotografica {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    background: grey;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+/* FOOTER */
+
+footer {
+    background: url(../imagenes/fondos/FONDO-NEGRO.png);
+    color: var(--clr-blanco);
+    background-size: cover;
+  
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+
+    padding-inline: 3%;
+ }
+
+footer > div {
+    align-self: center;
+    justify-self: center;
+    margin-left: 30px;
+    /* border: white 2px solid; */
+ }
+
+
+footer div p {
+    font-size: .7rem;
+    font-weight: 400;
+    display: grid;    
+    text-transform: none;
+ }
+
+footer .iconos {
+    margin-left: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+footer .iconos > * {
+    margin-left: 5px;
+}
+
+footer .iconos a {
+    cursor: pointer;
+}
+
+footer .iconos img {
+    max-width: 50%;
+}
