@@ -178,7 +178,7 @@ nav a:hover {
 .call {
     top: 6rem;
     min-height: 90vh;
-    padding-top: 15rem;
+    padding-top: 10rem;
     display: flex;
     background: rgba(0, 0, 0, 0.575) url('imagenes/call/IMG_6381\ 3-min.JPG') no-repeat center;
     color: var(--clr-blanco);
@@ -191,22 +191,28 @@ nav a:hover {
 }
 
 .call .cartel h2 {
-    padding-left: 5px;
-    padding-right: 5px;
-    background-color: #fe5d02;
+    font-size: calc(1.2rem + 1vw);
+    padding-block: calc(3px + 0.5vh);
+    padding-inline: calc(.5rem + 1vw);
+    background-color: #ff5e00;
     color: var(--clr-negro);
-    font-weight: bold;
+    font-weight: 900;
     margin-bottom: 5px;
     display: inline-block;
     
 }
 
 .call .cartel-cartel p {
-    margin-right: 3rem;
-    font-weight: bold;
-    font-size: 1rem;
+    word-spacing: 1.5;
+    line-height: 1.5;
+    padding-top: 2rem;
+    margin-right: 2rem;
+    font-weight: 700;
+    font-size: .6rem;
 
 }
+
+
 
 /* SEGUNDA PARTE - BANNER 1 */
 
@@ -286,6 +292,11 @@ nav a:hover {
     display:grid;
     grid-template-columns: 2fr 3fr;
 
+}
+
+.afroTV > div {
+    align-self: center;
+    justify-self: center;
 }
 
 
