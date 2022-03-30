@@ -44,7 +44,7 @@ img {
 p {
     font-family: var(--ff-paragraph);
     font-weight: 700;
-    line-height: 1.;
+    line-height: 1;
     font-size: 1.125rem;
     margin: 0;
 }
@@ -289,9 +289,6 @@ nav a:hover {
 }
 
 
-
-
-
 /* .afroTV img {
     max-width: 50%;
     max-height: 50%;
@@ -309,4 +306,63 @@ nav a:hover {
 
 .afroTV .cartel p {
     font-size: .9rem;
+}
+
+.galeriaFotografica {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    background: grey;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+/* FOOTER */
+
+footer {
+    background: url(imagenes/fondos/FONDO-NEGRO.png);
+    color: var(--clr-blanco);
+    background-size: cover;
+  
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+
+    padding-inline: 3%;
+ }
+
+footer > div {
+    align-self: center;
+    justify-self: center;
+    margin-left: 30px;
+    /* border: white 2px solid; */
+ }
+
+
+footer div p {
+    font-size: .7rem;
+    font-weight: 400;
+    display: grid;    
+    text-transform: none;
+ }
+
+footer .iconos {
+    margin-left: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+footer .iconos > * {
+    margin-left: 5px;
+}
+
+footer .iconos a {
+    cursor: pointer;
+}
+
+footer .iconos img {
+    max-width: 50%;
 }
