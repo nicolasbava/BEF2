@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
 html {
     scroll-behavior: smooth;
     /* background: black; */
     text-transform: uppercase;
     font-weight: bold;
+    margin: 0;
 }
 
 :root {
@@ -199,7 +203,7 @@ header .traductor {
 .check {
     position: relative;
     width: 50px;
-    top: -4px;
+    top: -6px;
 }
 
 .check:before {
@@ -245,7 +249,6 @@ header .traductor {
 
 .call {
     min-height: 90vh;
-    padding-top: calc(14rem + 2vw);
     display: flex;
     background: rgba(0, 0, 0, 0.575) url('../imagenes/call/bg1.JPG') no-repeat center;
     color: var(--clr-blanco);
@@ -253,7 +256,7 @@ header .traductor {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: 4s;
+    transition: 2s;
 
     appearance: inherit;
     animation-name: animate;
@@ -264,6 +267,13 @@ header .traductor {
     animation-play-state: running;
     animation-timing-function: cubic-bezier(0.01, 1.15, 1, 0.99);
 }
+
+.call .cartel {
+    padding-top: calc(14rem + 2vw);
+    padding-left: 1rem;
+    padding-right: 7rem;
+}
+
 
 @keyframes animate {
     0% {
@@ -283,11 +293,6 @@ header .traductor {
     }
 }
 
-
-.call .cartel {
-    padding-inline: 5%;
-}
-
 .call .cartel h2 {
     font-size: calc(1.2rem + 1vw);
     padding-block: calc(3px + 0.5vh);
@@ -297,6 +302,7 @@ header .traductor {
     font-weight: 900;
     margin-bottom: 5px;
     display: inline-block;
+    max-width: 100%;
     
 }
 
@@ -314,7 +320,7 @@ header .traductor {
 /* SEGUNDA PARTE - BANNER 1 */
 
 .banner1 {
-    background: url('../imagenes/fondos/FONDO-NEGRO.png') no-repeat center;
+    background: url('../imagenes/fondos/FONDO-NEGRO.png') repeat center top;
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -328,54 +334,17 @@ header .traductor {
 
 /* GALERIA CARTELERAS */
 
-.galeria1 {
-    background: grey;
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* BANNER 2 */
-
-.banner2 {
-    background: url(../imagenes/fondos/FONDO-NARANJA.png);
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    color: var(--clr-negro);
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 800;
-    padding-block: 4rem;
-    padding-inline: 2rem;
-}
-
-/* ESPACIO PUBLICITARIO - REPRODUCTOR AUTOMATICO */
-
-.publicidad {
-    background: grey;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-/* CV WISNY - GALERIA */
-
 .container {
     width: 100%;
-    min-height: 100vh;
+    min-height: 41vh;
     max-width: 100vw;
     margin: 0 auto;
     overflow: hidden;
 }
 
 .slider {
-    background-color: #f2f2f2;
-    padding: 40px 0;
-
+    /* background-color: #f2f2f2; */
+    padding: 0 0;
 }
 
 .slider_container {
@@ -391,11 +360,15 @@ header .traductor {
     opacity: 0;
     pointer-events: none;
 
-    display: grid;
-    background-color: #f2f2f2;
+    display: flex;
+    /* background-color: #f2f2f2; */
     grid-template-columns: 1fr max-content;
     align-items: center;
     transition: opacity 1.5s;
+}
+
+.slider_body img {
+    min-width: 170px;
 }
 
 .slider_img {
@@ -429,14 +402,68 @@ header .traductor {
 
 .slider_arrow {
     cursor: pointer;
-    width: 90%;
+    width: 100%
 }
 
 .slider_arrow:nth-of-type(2){
     justify-self: end;
 }
 
+/* BANNER 2 */
 
+.banner2 {
+    background: url(../imagenes/fondos/FONDO-NARANJA.png);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    color: var(--clr-negro);
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+    padding-block: 4rem;
+    padding-inline: 2rem;
+}
+
+/* ESPACIO PUBLICITARIO - REPRODUCTOR AUTOMATICO */
+
+.publicidad {
+    min-height: 80vh;
+    padding-top: calc(14rem + 2vw);
+    display: flex;
+    background: url(./01.png) ;
+    color: var(--clr-negro);
+    background-blend-mode: multiply;
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 4s; 
+
+    appearance: inherit;
+    animation-name: publicidad;
+    animation-direction: alternate-reverse;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-timing-function: cubic-bezier(0.01, 1.15, 1, 0.99); 
+}
+
+@keyframes publicidad {
+    0% {
+        background-image: url(./02.png);
+    }
+    50% {
+        background-image: url(./03.png);
+    }
+    100% {
+        background-image: url(./04.png);
+    }
+
+}
+
+/* CV WISNY - GALERIA */
+
+/* ABAJO */
 
 /* AFRO TV */
 
@@ -447,7 +474,8 @@ header .traductor {
     color: var(--clr-blanco);
     text-transform: none;
     padding-block: 5%;
-    padding-inline: 5%;
+    padding-right: 12%;
+    padding-left: 6%;
     column-width: 30%;
 
     display:grid;
@@ -461,36 +489,117 @@ header .traductor {
 }
 
 
-/* .afroTV img {
-    max-width: 50%;
-    max-height: 50%;
-} */
-
-/* .afroTV > div {
-    width: 50%;
-    /* padding: 10px; 
-} */
-
-
-/* .afroTV .cartel {
-    width: 50%;
-} */
-
 .afroTV .cartel p {
-    font-size: .9rem;
+    font-size: clamp(1rem, 1.6vw, 1.5rem);
+    font-weight: 200;
+    margin-bottom: 20px;
+    word-spacing: 2;
+    line-height: 1.1;
 }
 
-.galeriaFotografica {
-    height: 50vh;
+/* CV WISNY */
+/* GALERIA IMAGENES fotograd */
+
+  
+  .carousel {
+    background: rgba(0,0,0,1);
+    background-blend-mode: multiply;
     width: 100%;
-    display: flex;
-    background: grey;
-    align-items: center;
-    justify-content: center;
+    min-height: min(100vh, 80vh);
+    position: relative;
+  }
+  
+  .carousel ul li {
 
-}
+  }
+  .carousel > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 300ms opacity ease-in-out;
+    transition-delay: 400ms;
+  }
+  
+  .slide > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 98;
+  }
+  
+  .slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+  }
+  
+  .carousel-button {
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 10rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 1);
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+  }
+  
+  
+  .carousel-button.prev {
+    left: 1rem;
+  }
+  
+  .carousel-button.next {
+    right: 1rem;
+  }
+  
+  .cartel-cv {
+    position: absolute;
+    top: 5rem;
+    color: white;
+    left: 5rem;
+    max-width: 70%;
+    text-transform: none;
+  }
 
+  .cartel-cv h3 {
+    padding-block: .5rem;
+    padding-inline: 1rem;
+    display: inline-block;
 
+    background-color: #0030ca;
+    font-size: 2rem;
+    font-weight: 800;
+    
+
+  }
+
+  .cartel-cv h4 {
+    padding-block: .3rem;
+    padding-inline: 1rem;
+    display: inline-block;
+
+    background-color: #0030ca;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: .7;
+
+  }
+
+  .cartel-cv p {
+      text-transform: uppercase;
+  }
 /* FOOTER */
 
 footer {
@@ -504,6 +613,7 @@ footer {
     
 
     padding-inline: 3%;
+    padding-block: 3%;
  }
 
 footer > div {
@@ -513,22 +623,27 @@ footer > div {
     /* border: white 2px solid; */
  }
 
+ footer .logo {
+    max-height: 120px;
+ }
+
 
 footer div p {
-    font-size: .7rem;
+    font-size: clamp(.7rem, 1.5vw, 1.2rem);
     font-weight: 400;
     display: grid;    
     text-transform: none;
+    margin-right: calc(15px * 3vw);
  }
 
 footer .iconos {
-    margin-left: 30px;
+    margin-left: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 footer .iconos > * {
-    margin-left: 5px;
+    margin-left: 20px;
 }
 
 footer .iconos a {
@@ -537,4 +652,145 @@ footer .iconos a {
 
 footer .iconos img {
     max-width: 50%;
+}
+
+/* MEDIA QUERY */
+
+@media (min-width: 980px) {
+
+    .nav--toggle-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(400px, 3fr) 1fr;
+    }
+
+    /* what's inside () in gridtemplatecol its the space between the h1 logo and the nav menu */
+
+    header h1 {
+        grid-column: 1 / span 1;
+        padding-left: 12vw;
+        /*grid-column: 2 / 4; va a hacer que el logo ocupe desde la linea 2 hasta la 4, y va a quedar centrado. total de lineas = 5. */
+    }
+
+    nav {
+        all: unset; /* it keep every thing we declared in nav previously */
+        display: grid;   
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;    
+        padding-block: 6%;
+        
+
+    }
+
+    nav ul {
+        padding-left: 8rem;
+    }
+
+    nav ul li a{
+        color: var(--clr-naranja);
+        font-size: 1rem;
+
+    }
+
+    nav ul {
+        display: flex;        
+    }
+
+    nav li {
+        min-width: 98px;
+        margin-bottom: 0;
+        margin-right: .4rem;
+    }
+
+    nav a {
+        opacity: 1;
+        position: relative;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background: var(--clr-primary-600);
+        position: absolute;
+        top: -.5em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+        transform-origin: left;
+    }
+
+    nav a:hover::before {
+        transform: scale(1, 1);
+    }
+
+
+    .traductor {
+        padding-left: 2vw;
+        font-size: 1rem;
+        margin-top: -3px;
+        padding-right: 7vw;
+        max-width: 248px;
+    }
+    /* CALL MEDIAQUERIES */
+
+    .call .cartel {
+        padding-left: 12%;
+        text-shadow: 1px 1px rgba(0, 0, 0, 1);
+    }
+
+    .call .cartel p {
+        font-size: 1rem;
+        margin-right: 30%;
+        line-height: 1.2;
+    }
+
+    /* BANNER NEGRO 1  */
+    .banner1 {
+        padding-inline: 16%;
+    }
+
+    .banner1 p {
+        line-height: 1.5;
+    }
+
+    /* GALERIA CARTELERAS */
+
+    /* BANNER ANARANJADO 2 */
+
+    .banner2 {
+        padding-inline: 12%;
+    }
+
+    .banner2 p {
+        line-height: 1.3;
+        font-weight: 800;
+        font-size: 1.5rem;
+    }
+
+
+    /* CARTEL CV WISNY */
+
+    .cartel-cv {
+        top: 40%;
+        left: 15%;
+    }
+
+    .cartel-cv h3 {
+        margin-bottom: 1rem;
+    }
+
+    
+
+
+
+
+   
+
+    
 }
