@@ -87,6 +87,8 @@ header {
     /* justify-content: space-around; */
     
     grid-template-columns: 1fr 1fr 1fr; 
+
+    box-shadow: black 0px 1px 12px 4px;
 }
 
 header > * {
@@ -185,10 +187,20 @@ nav a:hover {
     top: 5px;
 }
 
-/* INTERRUPTOR TRADUCCION */
+/*
+ * ─── INTERRUPTOR TRADUCTOR ──────────────────────────────────────────────────────
+ */
+
+    
+        /* INTERRUPTOR TRADUCCION inicio  */
 
 header .traductor {
     color: var(--clr-naranja);
+
+}
+
+input {
+    cursor: pointer;
 }
 
 .es {
@@ -230,7 +242,7 @@ header .traductor {
 }
 
 .check:checked:after {
-    background-color: #fff;
+    background-color: rgb(0, 0, 0);
 }
 
 .check:checked:after {
@@ -250,13 +262,13 @@ header .traductor {
 .call {
     min-height: 90vh;
     display: flex;
-    background: rgba(0, 0, 0, 0.575) url('../imagenes/call/bg1.JPG') no-repeat center;
+    background: rgba(0, 0, 0, 0.575) url('../imagenes/call/01.JPG') no-repeat center;
     color: var(--clr-blanco);
     background-blend-mode: multiply;
     background-size: cover;
-    background-position: center;
+    background-position: left top;
     background-repeat: no-repeat;
-    transition: 2s;
+    transition: animate 2s 5s;
 
     appearance: inherit;
     animation-name: animate;
@@ -265,7 +277,7 @@ header .traductor {
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-play-state: running;
-    animation-timing-function: cubic-bezier(0.01, 1.15, 1, 0.99);
+    animation-timing-function: linear;
 }
 
 .call .cartel {
@@ -277,20 +289,9 @@ header .traductor {
 
 @keyframes animate {
     0% {
-        background-image: url(../imagenes/call/bg2.JPG);
+        background-image: url(../imagenes/call/02.JPG);
     }
-    25% {
-        background-image: url(../imagenes/call/bg3.png);
-    }
-    50% {
-        background-image: url(../imagenes/call/bg4.JPG);
-    }
-    75% {
-        background-image: url(../imagenes/call/bg6.JPG);
-    }
-    100% {
-        background-image: url(../imagenes/call/bg7.JPG);
-    }
+    
 }
 
 .call .cartel h2 {
@@ -317,7 +318,11 @@ header .traductor {
 
 
 
-/* SEGUNDA PARTE - BANNER 1 */
+/*
+ * ─── SEGUNDA PARTE BANNER NEGRO ───────────────────────────────────────────────────────
+ */
+
+    
 
 .banner1 {
     background: url('../imagenes/fondos/FONDO-NEGRO.png') repeat center top;
@@ -332,7 +337,11 @@ header .traductor {
     padding-inline: 2rem;
 }
 
-/* GALERIA CARTELERAS */
+/*
+ * ─── TERCERA PARTE GALERIA CARTELERAS ─────────────────────────────────────────────────────────
+ */
+
+    
 
 .container {
     width: 100%;
@@ -409,8 +418,15 @@ header .traductor {
     justify-self: end;
 }
 
-/* BANNER 2 */
+            /*
+            * ─── REVISAR EL CODIGO DE ARRIBA Y BORRAR LO INNECESARIO ────────────────────────
+            */
 
+/*
+* ─── BANNER ANARANJADO ──────────────────────────────────────────────────────────
+*/
+
+     
 .banner2 {
     background: url(../imagenes/fondos/FONDO-NARANJA.png);
     background-size: cover;
@@ -462,6 +478,26 @@ header .traductor {
 }
 
 /* CV WISNY - GALERIA */
+/* CV WISNY BACKGROUNDS */
+
+
+.slide-bg1 { background: url(../imagenes/assets/cv1.JPG); }
+.slide-bg2 { background: url(../imagenes/assets/cv2.JPG); }
+.slide-bg3 { background: url(../imagenes/assets/cv3.JPG); }
+.slide-bg4 { background: url(../imagenes/assets/cv4.JPG); }
+.slide-bg5 { background: black }
+.slide-bg6 { background: blue }
+
+.slide {
+    background-position: center center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, .5);
+    background-repeat: no-repeat; 
+    background-blend-mode: multiply;
+
+    animation: background-color 2s ease;
+
+}
 
 /* ABAJO */
 
@@ -497,7 +533,10 @@ header .traductor {
     line-height: 1.1;
 }
 
-/* CV WISNY */
+
+
+
+/* CV WISNY js*/
 /* GALERIA IMAGENES fotograd */
 
   
@@ -540,29 +579,36 @@ header .traductor {
     z-index: 1;
     transition-delay: 0ms;
   }
-  
+
   .carousel-button {
     position: absolute;
     z-index: 2;
     background: none;
     border: none;
-    font-size: 10rem;
+    font-size: clamp(4rem, 16vw, 20rem);
     top: 50%;
     transform: translateY(-50%);
-    color: rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, .5);
+
     cursor: pointer;
     border-radius: .25rem;
     padding: 0 .5rem;
+    transition: 500ms ease;
   }
   
+  .carousel-button:hover {
+    color: rgba(255, 255, 255, 1);
+    
+  }
   
   .carousel-button.prev {
-    left: 1rem;
+    left: .01em;
   }
   
   .carousel-button.next {
-    right: 1rem;
+    right: .01em;
   }
+  /* */
   
   .cartel-cv {
     position: absolute;
@@ -656,7 +702,7 @@ footer .iconos img {
 
 /* MEDIA QUERY */
 
-@media (min-width: 980px) {
+@media (min-width: 700px) {
 
     .nav--toggle-label {
         display: none;
@@ -741,6 +787,9 @@ footer .iconos img {
 
     .call .cartel {
         padding-left: 12%;
+    }
+
+    .call .cartel p {
         text-shadow: 1px 1px rgba(0, 0, 0, 1);
     }
 
@@ -788,7 +837,26 @@ footer .iconos img {
     
 
 
+    /* NUEVA CARTELERA */
+    
 
+    .cartelera-contenedor {
+        color: white;
+    }
+
+    .poster h3, .poster p { opacity: 0;}
+
+    .cartelera-contenedor > a {
+        width: 50px;
+        height: 100px;
+    }
+
+    .cartelera-contenedor {
+        display: flex;
+    }
+    .poster1 { background-color: red;}
+    .poster1 { background-color: rgb(55, 13, 172);}
+    .poster1 { background-color: rgb(59, 139, 79);} 
 
    
 
