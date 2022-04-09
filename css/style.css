@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -15,16 +16,18 @@ html {
 :root {
     --clr-blanco: white;
     --clr-negro: black;
-    --clr-naranja: #fe5d02;
+    --clr-naranja: #f75d03;
     --ff: 'Libre Franklin', sans-serif;
 }
 
 body {
-   margin: 0;
-   font-family: var(--ff);
+    margin: 0;
+    font-family: var(--ff);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -32,8 +35,7 @@ h1,
 h2,
 h3,
 h4,
-h5
- {
+h5 {
     margin: 0;
     font-family: var(--ff-title);
     font-weight: 500;
@@ -59,9 +61,13 @@ a {
     font-family: var(--ff-title);
 }
 
+
 /* END global variables */
 
-/* START NAV BAR */ 
+
+/* START NAV BAR */
+
+
 /* header h1 {
     margin-left: 50px;
 } */
@@ -69,10 +75,11 @@ a {
 header a {
     text-decoration: none;
     color: var(--clr-negro);
+    padding: 2vh 0;
 }
 
-header h1 a img {
-    max-width: calc(5rem + 3vw);
+header a img {
+    max-width: 5em;
     padding-block: 3%;
 }
 
@@ -85,15 +92,12 @@ header {
     color: var(--clr-blanco);
     display: grid;
     /* justify-content: space-around; */
-    
-    grid-template-columns: 1fr 1fr 1fr; 
-
-    box-shadow: black 0px 1px 12px 4px;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-header > * {
-    align-self:center;
-    justify-self:space-between;
+header>* {
+    align-self: center;
+    justify-self: space-between;
 }
 
 nav {
@@ -104,7 +108,6 @@ nav {
     background: var(--clr-naranja);
     width: 100%;
     padding-top: .5rem;
-
     transform: scale(1, 0);
     transition: transform 400ms ease-in-out;
     transform-origin: top;
@@ -125,22 +128,20 @@ nav a {
     color: var(--clr-negro);
     text-decoration: none;
     font-size: 1rem;
-
     opacity: 0;
     transition: opacity 150ms ease-in-out;
-
 }
 
 nav a:hover {
     color: var(--clr-blanco);
 }
 
-.nav--toggle:checked ~ nav {
+.nav--toggle:checked~nav {
     /* display: block; */
     transform: scale(1, 1);
 }
 
-.nav--toggle:checked ~ nav a {
+.nav--toggle:checked~nav a {
     opacity: 1;
     transition: opacity 250ms ease-in-out 500ms;
 }
@@ -160,6 +161,7 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     margin-left: 1em;
+    cursor: pointer;
 }
 
 .nav--toggle-label span,
@@ -177,7 +179,7 @@ nav a:hover {
 .nav--toggle-label span::after {
     content: '';
     position: absolute;
-} 
+}
 
 .nav--toggle-label span::before {
     bottom: 5px;
@@ -187,16 +189,16 @@ nav a:hover {
     top: 5px;
 }
 
+
 /*
  * ─── INTERRUPTOR TRADUCTOR ──────────────────────────────────────────────────────
  */
 
-    
-        /* INTERRUPTOR TRADUCCION inicio  */
+
+/* INTERRUPTOR TRADUCCION inicio  */
 
 header .traductor {
     color: var(--clr-naranja);
-
 }
 
 input {
@@ -226,7 +228,6 @@ input {
     background: var(--clr-negro);
     border-radius: 25px;
     border: 2px solid var(--clr-naranja);
-
 }
 
 .check:after {
@@ -248,28 +249,27 @@ input {
 .check:checked:after {
     left: 25px;
     border: 2px solid var(--clr-naranja);
-
 }
 
 .check:checked:before {
     background-color: var(--clr-naranja);
 }
-/* CALL TO ACTION */
-.divisor {
-    height: 10vh;
-}
+
+
+/*
+ * ─── 1 CALL TO ACTION ───────────────────────────────────────────────────────────
+ */
 
 .call {
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
-    background: rgba(0, 0, 0, 0.575) url('../imagenes/call/01.JPG') no-repeat center;
+    background: rgba(0, 0, 0, 0.65) url('../imagenes/call/01.JPG') no-repeat center;
     color: var(--clr-blanco);
     background-blend-mode: multiply;
     background-size: cover;
     background-position: left top;
     background-repeat: no-repeat;
     transition: animate 2s 5s;
-
     appearance: inherit;
     animation-name: animate;
     animation-direction: alternate-reverse;
@@ -281,48 +281,49 @@ input {
 }
 
 .call .cartel {
-    padding-top: calc(14rem + 2vw);
+    padding-top: 15.5em;
     padding-left: 1rem;
-    padding-right: 7rem;
+    padding-right: 4em;
 }
-
 
 @keyframes animate {
     0% {
         background-image: url(../imagenes/call/02.JPG);
     }
-    
 }
 
-.call .cartel h2 {
-    font-size: calc(1.2rem + 1vw);
-    padding-block: calc(3px + 0.5vh);
-    padding-inline: calc(.5rem + 1vw);
-    background-color: #ff5e00;
+.call .cartel h2,
+.call .cartel h1 {
+    font-size: clamp(2rem, 2.6vw, 5rem);
+    padding-block: 0.1em;
+    padding-inline: 0.4em;
+    background-color: #f75d03;
     color: var(--clr-negro);
     font-weight: 900;
-    margin-bottom: 5px;
+    margin-bottom: .4em;
     display: inline-block;
     max-width: 100%;
-    
 }
 
 .call .cartel-cartel p {
     word-spacing: 1.5;
     line-height: 1.5;
-    padding-top: 1.5rem;
+    /* padding-top: 1.5rem; */
     margin-right: 2rem;
     font-weight: 700;
-    font-size: .6rem;
+    font-size: clamp(.8rem, 1vw, 1.5rem);
+}
+
+.call .cartel h2 {
+    letter-spacing: -0.9px;
+    word-spacing: 0px;
+    text-align: justify;
 }
 
 
-
 /*
- * ─── SEGUNDA PARTE BANNER NEGRO ───────────────────────────────────────────────────────
+ * ─── 2 BANNER NEGRO ───────────────────────────────────────────────────────
  */
-
-    
 
 .banner1 {
     background: url('../imagenes/fondos/FONDO-NEGRO.png') repeat center top;
@@ -337,98 +338,134 @@ input {
     padding-inline: 2rem;
 }
 
+
 /*
- * ─── TERCERA PARTE GALERIA CARTELERAS ─────────────────────────────────────────────────────────
+ * ─── 3 CARTELERA NUEVA ──────────────────────────────────────────────────────────
  */
 
-    
+
+/* body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        } */
+
+.poster {
+    cursor: pointer;
+    /* height: 60vh; */
+    background-color: black;
+    /* border: 5px red solid; */
+    /*centering hover*/
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.poster a {
+    text-decoration: none;
+    color: white;
+}
 
 .container {
-    width: 100%;
-    min-height: 41vh;
-    max-width: 100vw;
-    margin: 0 auto;
-    overflow: hidden;
+    padding-inline: 10%;
+    background: #e8e8e8;
+    /* margin-top: 20vh;
+            margin-bottom: 20vh; */
 }
 
-.slider {
-    /* background-color: #f2f2f2; */
-    padding: 0 0;
+.poster img {
+    z-index: 95;
+    /* margin-top: 10vh; */
 }
 
-.slider_container {
-    display: grid;
-    grid-template-columns: 50px 1fr 50px;
-    align-items: center;
-    gap: 1rem;
-}
-
-.slider_body {
-    grid-column: 2/3;
-    grid-row: 1/2;
+.poster-cartel {
+    color: white;
     opacity: 0;
-    pointer-events: none;
-
+    width: 90%;
+    text-align: center;
+    margin: auto 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    transition: 550ms ease-in-out;
+    position: absolute;
     display: flex;
-    /* background-color: #f2f2f2; */
-    grid-template-columns: 1fr max-content;
+    flex-direction: column;
     align-items: center;
-    transition: opacity 1.5s;
+    justify-content: center;
 }
 
-.slider_body img {
-    min-width: 170px;
-}
-
-.slider_img {
-    width: 230px;
-    height: 230px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-}
-
-.slider_text {
-    max-width: 600px;
-}
-
-.subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-.slider_review {
-    font-weight: 300;
-    font-size: 10px;
-    line-height: 1.7;
-}
-
-.slider_body-show {
+.poster:hover .poster-cartel {
+    padding: 0 1px;
     opacity: 1;
-    pointer-events: unset;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.slider_arrow {
-    cursor: pointer;
-    width: 100%
+.poster-cartel h3 {
+    font-size: clamp(1.1rem, 1.3vw, 1.5rem);
 }
 
-.slider_arrow:nth-of-type(2){
-    justify-self: end;
+.poster-cartel p {
+    margin-top: .8em;
+    padding: 0 9%;
+    font-size: clamp(.9rem, 1.4vw, 1.5rem);
+    font-weight: 400;
+    text-transform: none;
 }
 
-            /*
-            * ─── REVISAR EL CODIGO DE ARRIBA Y BORRAR LO INNECESARIO ────────────────────────
-            */
+
+/* FONDOS CARTELERAS */
+
+.poster1 {
+    background-position: center;
+    background-size: contain;
+}
+
+.poster2 {
+    background-position: center;
+    background-size: contain;
+}
+
+.poster3 {
+    background-position: center;
+    background-size: contain;
+}
+
+.poster4 {
+    background-position: center;
+    background-size: contain;
+}
+
+.poster5 {
+    background-position: center;
+    background-size: contain;
+}
+
+.poster6 {
+    background-position: center;
+    background-size: contain;
+}
+
+
+/* FIN FONDO CARTELERA */
+
+.owl-carousel.owl-theme {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
 
 /*
-* ─── BANNER ANARANJADO ──────────────────────────────────────────────────────────
+* ───  4 BANNER ANARANJADO ──────────────────────────────────────────────────────────
 */
 
-     
 .banner2 {
-    background: url(../imagenes/fondos/FONDO-NARANJA.png);
+    background: url(../imagenes/fondos/FONDO-NARANJA-2.png);
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -440,20 +477,22 @@ input {
     padding-inline: 2rem;
 }
 
-/* ESPACIO PUBLICITARIO - REPRODUCTOR AUTOMATICO */
+
+/*
+ * ─── 5  ESPACIO PUBLICITARIO REPRODUCTOR AUTOMATICO ────────────────────────────────
+ */
 
 .publicidad {
     min-height: 80vh;
     padding-top: calc(14rem + 2vw);
     display: flex;
-    background: url(./01.png) ;
+    background: url(./01.png);
     color: var(--clr-negro);
     background-blend-mode: multiply;
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: 4s; 
-
+    transition: 4s;
     appearance: inherit;
     animation-name: publicidad;
     animation-direction: alternate-reverse;
@@ -461,7 +500,7 @@ input {
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-play-state: running;
-    animation-timing-function: cubic-bezier(0.01, 1.15, 1, 0.99); 
+    animation-timing-function: cubic-bezier(0.01, 1.15, 1, 0.99);
 }
 
 @keyframes publicidad {
@@ -474,34 +513,56 @@ input {
     100% {
         background-image: url(./04.png);
     }
-
 }
 
-/* CV WISNY - GALERIA */
+
+/*
+  * ─── 6 CV WISNY - GALERIA ─────────────────────────────────────────────────────────
+  */
+
+
 /* CV WISNY BACKGROUNDS */
 
+.slide-bg1 {
+    background: url(../imagenes/assets/cv1.JPG);
+}
 
-.slide-bg1 { background: url(../imagenes/assets/cv1.JPG); }
-.slide-bg2 { background: url(../imagenes/assets/cv2.JPG); }
-.slide-bg3 { background: url(../imagenes/assets/cv3.JPG); }
-.slide-bg4 { background: url(../imagenes/assets/cv4.JPG); }
-.slide-bg5 { background: black }
-.slide-bg6 { background: blue }
+.slide-bg2 {
+    background: url(../imagenes/assets/cv2.JPG);
+}
+
+.slide-bg3 {
+    background: url(../imagenes/assets/cv3.JPG);
+}
+
+.slide-bg4 {
+    background: url(../imagenes/assets/cv4.JPG);
+}
+
+.slide-bg5 {
+    background: black
+}
+
+.slide-bg6 {
+    background: blue
+}
 
 .slide {
     background-position: center center;
     background-size: cover;
-    background-color: rgba(0, 0, 0, .5);
-    background-repeat: no-repeat; 
+    background-color: rgba(0, 0, 0, .3);
+    background-repeat: no-repeat;
     background-blend-mode: multiply;
-
     animation: background-color 2s ease;
-
 }
+
 
 /* ABAJO */
 
-/* AFRO TV */
+
+/*
+ * ─── 7 AFRO TV ──────────────────────────────────────────────────────────────────
+ */
 
 .afroTV {
     background: url(../imagenes/fondos/FONDO-AFRO.png) no-repeat;
@@ -513,17 +574,14 @@ input {
     padding-right: 12%;
     padding-left: 6%;
     column-width: 30%;
-
-    display:grid;
+    display: grid;
     grid-template-columns: 2fr 3fr;
-
 }
 
-.afroTV > div {
+.afroTV>div {
     align-self: center;
     justify-self: center;
 }
-
 
 .afroTV .cartel p {
     font-size: clamp(1rem, 1.6vw, 1.5rem);
@@ -534,53 +592,51 @@ input {
 }
 
 
-
-
 /* CV WISNY js*/
+
+
 /* GALERIA IMAGENES fotograd */
 
-  
-  .carousel {
-    background: rgba(0,0,0,1);
+.carousel {
+    background: rgba(0, 0, 0, 1);
     background-blend-mode: multiply;
     width: 100%;
     min-height: min(100vh, 80vh);
     position: relative;
-  }
-  
-  .carousel ul li {
+}
 
-  }
-  .carousel > ul {
+.carousel ul li {}
+
+.carousel>ul {
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-  
-  .slide {
+}
+
+.slide {
     position: absolute;
     inset: 0;
     opacity: 0;
     transition: 300ms opacity ease-in-out;
     transition-delay: 400ms;
-  }
-  
-  .slide > img {
+}
+
+.slide>img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     z-index: 98;
-  }
-  
-  .slide[data-active] {
+}
+
+.slide[data-active] {
     opacity: 1;
     z-index: 1;
     transition-delay: 0ms;
-  }
+}
 
-  .carousel-button {
+.carousel-button {
     position: absolute;
     z-index: 2;
     background: none;
@@ -588,175 +644,178 @@ input {
     font-size: clamp(4rem, 16vw, 20rem);
     top: 50%;
     transform: translateY(-50%);
-    color: rgba(255, 255, 255, .5);
-
+    color: rgba(255, 255, 255, .2);
     cursor: pointer;
     border-radius: .25rem;
     padding: 0 .5rem;
     transition: 500ms ease;
-  }
-  
-  .carousel-button:hover {
+}
+
+.carousel-button:hover {
     color: rgba(255, 255, 255, 1);
-    
-  }
-  
-  .carousel-button.prev {
+}
+
+.carousel-button.prev {
     left: .01em;
-  }
-  
-  .carousel-button.next {
+}
+
+.carousel-button.next {
     right: .01em;
-  }
-  /* */
-  
-  .cartel-cv {
+}
+
+
+/* */
+
+.cartel-cv {
     position: absolute;
-    top: 5rem;
+    top: 4em;
     color: white;
-    left: 5rem;
+    left: 3em;
     max-width: 70%;
     text-transform: none;
-  }
+}
 
-  .cartel-cv h3 {
-    padding-block: .5rem;
-    padding-inline: 1rem;
+.cartel-cv h3 {
+    padding-block: .1em;
+    padding-inline: .3em;
     display: inline-block;
-
-    background-color: #0030ca;
-    font-size: 2rem;
+    background-color: #0029b1;
+    font-size: clamp(1.9rem, 2vw, 2rem);
     font-weight: 800;
-    
+}
 
-  }
-
-  .cartel-cv h4 {
-    padding-block: .3rem;
-    padding-inline: 1rem;
+.cartel-cv h4 {
+    padding-block: .1em;
+    padding-inline: .3em;
+    margin-bottom: .6em;
     display: inline-block;
-
     background-color: #0030ca;
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 1.8vw, 1.9rem);
     font-weight: 800;
     letter-spacing: .7;
+}
 
-  }
+.cartel-cv p {
+    text-transform: uppercase;
+    line-height: 1;
+    font-weight: 600;
+    margin-bottom: .9em;
+    font-size: clamp(0.7rem, 0.6vw, 2rem);
+    word-spacing: 3px;
+}
 
-  .cartel-cv p {
-      text-transform: uppercase;
-  }
+
 /* FOOTER */
 
 footer {
     background: url(../imagenes/fondos/FONDO-NEGRO.png);
     color: var(--clr-blanco);
     background-size: cover;
-  
     justify-content: center;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    
-
     padding-inline: 3%;
     padding-block: 3%;
- }
-
-footer > div {
-    align-self: center;
-    justify-self: center;
-    margin-left: 30px;
-    /* border: white 2px solid; */
- }
-
- footer .logo {
-    max-height: 120px;
- }
-
-
-footer div p {
-    font-size: clamp(.7rem, 1.5vw, 1.2rem);
-    font-weight: 400;
-    display: grid;    
-    text-transform: none;
-    margin-right: calc(15px * 3vw);
- }
-
-footer .iconos {
-    margin-left: 50px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-footer .iconos > * {
-    margin-left: 20px;
+footer>div {
+    align-self: center;
+    justify-self: center;
+    margin-left: .01em;
+    /* border: white 2px solid; */
+}
+
+footer .logo-footer {
+    max-height: 120px;
+    cursor: pointer;
+}
+
+footer div p {
+    font-size: clamp(.7rem, 1.3vw, 1.2rem);
+    font-weight: 300;
+    display: grid;
+    text-transform: none;
+    margin-right: 1em;
+    margin-left: 3em;
+}
+
+footer .iconos {
+    margin-left: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-right: 6%;
+}
+
+footer .iconos>* {
+    margin-left: 1em;
 }
 
 footer .iconos a {
     cursor: pointer;
+    transition: transform 250ms ease;
+}
+
+footer .iconos a:hover {
+    transform: scale(.95);
 }
 
 footer .iconos img {
-    max-width: 50%;
+    max-width: 60%;
 }
+
 
 /* MEDIA QUERY */
 
 @media (min-width: 700px) {
-
+    .divisor-header {
+        display: none;
+    }
+    .logo {
+        margin-left: 9vw;
+    }
     .nav--toggle-label {
         display: none;
     }
-
     header {
         display: grid;
         grid-template-columns: 1fr auto minmax(400px, 3fr) 1fr;
     }
-
     /* what's inside () in gridtemplatecol its the space between the h1 logo and the nav menu */
-
     header h1 {
         grid-column: 1 / span 1;
         padding-left: 12vw;
         /*grid-column: 2 / 4; va a hacer que el logo ocupe desde la linea 2 hasta la 4, y va a quedar centrado. total de lineas = 5. */
     }
-
     nav {
-        all: unset; /* it keep every thing we declared in nav previously */
-        display: grid;   
+        float: right;
+        all: unset;
+        /* it keep every thing we declared in nav previously */
+        display: grid;
         flex-wrap: wrap;
         justify-content: flex-end;
-        align-items: center;    
-        padding-block: 6%;
-        
-
+        align-items: center;
+        margin: auto;
     }
-
     nav ul {
-        padding-left: 8rem;
+        padding-left: 1em;
     }
-
-    nav ul li a{
+    nav ul li a {
         color: var(--clr-naranja);
-        font-size: 1rem;
-
+        font-size: clamp(.8rem, 1.2vw, 1.5rem);
     }
-
     nav ul {
-        display: flex;        
+        display: flex;
+        align-items: center;
     }
-
     nav li {
-        min-width: 98px;
+        /* min-width: 98px; */
         margin-bottom: 0;
-        margin-right: .4rem;
+        margin-right: .1em;
     }
-
     nav a {
         opacity: 1;
         position: relative;
     }
-
     nav a::before {
         content: '';
         display: block;
@@ -764,101 +823,63 @@ footer .iconos img {
         background: var(--clr-primary-600);
         position: absolute;
         top: -.5em;
-        left: 0;
-        right: 0;
+        /* left: 0; */
+        /* right: 0; */
         transform: scale(0, 1);
         transition: transform ease-in-out 250ms;
         transform-origin: left;
     }
-
     nav a:hover::before {
         transform: scale(1, 1);
     }
-
-
     .traductor {
         padding-left: 2vw;
-        font-size: 1rem;
+        font-size: clamp(1rem, 1vw, 1.5rem);
         margin-top: -3px;
         padding-right: 7vw;
         max-width: 248px;
+        position: absolute;
+        right: 0;
     }
     /* CALL MEDIAQUERIES */
-
     .call .cartel {
         padding-left: 12%;
     }
-
-    .call .cartel p {
+    /* .call .cartel p {
         text-shadow: 1px 1px rgba(0, 0, 0, 1);
-    }
-
+    } */
     .call .cartel p {
         font-size: 1rem;
-        margin-right: 30%;
+        margin-right: 45%;
         line-height: 1.2;
+        word-spacing: 5px;
     }
-
     /* BANNER NEGRO 1  */
     .banner1 {
         padding-inline: 16%;
     }
-
     .banner1 p {
         line-height: 1.5;
     }
-
     /* GALERIA CARTELERAS */
-
     /* BANNER ANARANJADO 2 */
-
     .banner2 {
         padding-inline: 12%;
     }
-
     .banner2 p {
         line-height: 1.3;
         font-weight: 800;
         font-size: 1.5rem;
     }
-
-
     /* CARTEL CV WISNY */
-
     .cartel-cv {
-        top: 40%;
+        top: 9em;
         left: 15%;
     }
-
     .cartel-cv h3 {
         margin-bottom: 1rem;
     }
-
-    
-
-
-    /* NUEVA CARTELERA */
-    
-
-    .cartelera-contenedor {
-        color: white;
+    .cartel-cv p {
+        margin-right: 20%;
     }
-
-    .poster h3, .poster p { opacity: 0;}
-
-    .cartelera-contenedor > a {
-        width: 50px;
-        height: 100px;
-    }
-
-    .cartelera-contenedor {
-        display: flex;
-    }
-    .poster1 { background-color: red;}
-    .poster1 { background-color: rgb(55, 13, 172);}
-    .poster1 { background-color: rgb(59, 139, 79);} 
-
-   
-
-    
 }
