@@ -1,885 +1,909 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    /* background: black; */
-    text-transform: uppercase;
-    font-weight: bold;
-    margin: 0;
-}
-
-:root {
-    --clr-blanco: white;
-    --clr-negro: black;
-    --clr-naranja: #f75d03;
-    --ff: 'Libre Franklin', sans-serif;
-}
-
-body {
-    margin: 0;
-    font-family: var(--ff);
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-    margin: 0;
-    font-family: var(--ff-title);
-    font-weight: 500;
-    letter-spacing: 1px;
-}
-
-img {
-    display: inline-block;
-    max-width: 100%;
-}
-
-p {
-    font-family: var(--ff-paragraph);
-    font-weight: 700;
-    line-height: 1;
-    font-size: 1.125rem;
-    margin: 0;
-}
-
-a {
-    text-decoration: none;
-    color: var(--clr-primary-100);
-    font-family: var(--ff-title);
-}
-
-
-/* END global variables */
-
-
-/* START NAV BAR */
-
-
-/* header h1 {
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            /* background: black; */
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+         :root {
+            --clr-blanco: white;
+            --clr-negro: black;
+            --clr-naranja: #f75d03;
+            --ff: 'Libre Franklin', sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            font-family: var(--ff);
+        }
+        
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            margin: 0;
+            font-family: var(--ff-title);
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        img {
+            display: inline-block;
+            max-width: 100%;
+        }
+        
+        p {
+            font-family: var(--ff-paragraph);
+            font-weight: 700;
+            line-height: 1;
+            font-size: 1.125rem;
+            margin: 0;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--clr-primary-100);
+            font-family: var(--ff-title);
+        }
+        /* END global variables */
+        /* START NAV BAR */
+        /* header h1 {
     margin-left: 50px;
 } */
-
-header a {
-    text-decoration: none;
-    color: var(--clr-negro);
-    padding: 2vh 0;
-}
-
-header a img {
-    max-width: 5em;
-    padding-block: 3%;
-}
-
-header {
-    background: var(--clr-negro);
-    text-align: center;
-    position: fixed;
-    z-index: 999;
-    width: 100%;
-    color: var(--clr-blanco);
-    display: grid;
-    /* justify-content: space-around; */
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-header>* {
-    align-self: center;
-    justify-self: space-between;
-}
-
-nav {
-    position: absolute;
-    text-align: left;
-    top: 100%;
-    left: 0;
-    background: var(--clr-naranja);
-    width: 100%;
-    padding-top: .5rem;
-    transform: scale(1, 0);
-    transition: transform 400ms ease-in-out;
-    transform-origin: top;
-}
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-nav li {
-    margin-bottom: 1em;
-    margin-left: 1em;
-}
-
-nav a {
-    color: var(--clr-negro);
-    text-decoration: none;
-    font-size: 1rem;
-    opacity: 0;
-    transition: opacity 150ms ease-in-out;
-}
-
-nav a:hover {
-    color: var(--clr-blanco);
-}
-
-.nav--toggle:checked~nav {
-    /* display: block; */
-    transform: scale(1, 1);
-}
-
-.nav--toggle:checked~nav a {
-    opacity: 1;
-    transition: opacity 250ms ease-in-out 500ms;
-}
-
-.nav--toggle {
-    display: none;
-}
-
-.nav--toggle-label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* border: 1px solid red; */
-    height: 100%;
-    width: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 1em;
-    cursor: pointer;
-}
-
-.nav--toggle-label span,
-.nav--toggle-label span::before,
-.nav--toggle-label span::after {
-    display: block;
-    background: var(--clr-naranja);
-    height: 2px;
-    width: 1.5rem;
-    border-radius: 2px;
-    position: relative;
-}
-
-.nav--toggle-label span::before,
-.nav--toggle-label span::after {
-    content: '';
-    position: absolute;
-}
-
-.nav--toggle-label span::before {
-    bottom: 5px;
-}
-
-.nav--toggle-label span::after {
-    top: 5px;
-}
-
-
-/*
+        
+        header a {
+            text-decoration: none;
+            color: var(--clr-negro);
+            padding: 2vh 0;
+        }
+        
+        header a img {
+            max-width: 5em;
+            padding-block: 3%;
+        }
+        
+        header {
+            background: var(--clr-negro);
+            text-align: center;
+            position: fixed;
+            z-index: 999;
+            width: 100%;
+            color: var(--clr-blanco);
+            display: grid;
+            /* justify-content: space-around; */
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        
+        header>* {
+            align-self: center;
+            justify-self: space-between;
+        }
+        
+        nav {
+            position: absolute;
+            text-align: left;
+            top: 100%;
+            left: 0;
+            background: var(--clr-naranja);
+            width: 100%;
+            padding-top: .5rem;
+            transform: scale(1, 0);
+            transition: transform 400ms ease-in-out;
+            transform-origin: top;
+        }
+        
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-bottom: 1em;
+            margin-left: 1em;
+        }
+        
+        nav a {
+            color: var(--clr-negro);
+            text-decoration: none;
+            font-size: 1rem;
+            opacity: 0;
+            transition: opacity 150ms ease-in-out;
+        }
+        
+        nav a:hover {
+            color: var(--clr-blanco);
+        }
+        
+        .nav--toggle:checked~nav {
+            /* display: block; */
+            transform: scale(1, 1);
+        }
+        
+        .nav--toggle:checked~nav a {
+            opacity: 1;
+            transition: opacity 250ms ease-in-out 500ms;
+        }
+        
+        .nav--toggle {
+            display: none;
+        }
+        
+        .nav--toggle-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* border: 1px solid red; */
+            height: 100%;
+            width: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 1em;
+            cursor: pointer;
+        }
+        
+        .nav--toggle-label span,
+        .nav--toggle-label span::before,
+        .nav--toggle-label span::after {
+            display: block;
+            background: var(--clr-naranja);
+            height: 2px;
+            width: 1.5rem;
+            border-radius: 2px;
+            position: relative;
+        }
+        
+        .nav--toggle-label span::before,
+        .nav--toggle-label span::after {
+            content: '';
+            position: absolute;
+        }
+        
+        .nav--toggle-label span::before {
+            bottom: 5px;
+        }
+        
+        .nav--toggle-label span::after {
+            top: 5px;
+        }
+        /*
  * ─── INTERRUPTOR TRADUCTOR ──────────────────────────────────────────────────────
  */
-
-
-/* INTERRUPTOR TRADUCCION inicio  */
-
-header .traductor {
-    color: var(--clr-naranja);
-}
-
-input {
-    cursor: pointer;
-}
-
-.es {
-    color: var(--clr-naranja);
-    top: 10px;
-}
-
-.en {
-    color: var(--clr-naranja);
-}
-
-.check {
-    position: relative;
-    width: 50px;
-    top: -6px;
-}
-
-.check:before {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 25px;
-    background: var(--clr-negro);
-    border-radius: 25px;
-    border: 2px solid var(--clr-naranja);
-}
-
-.check:after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    background-color: var(--clr-negro);
-    border-radius: 25px;
-    transition: 0.25s;
-    border: 2px solid var(--clr-naranja);
-    box-sizing: border-box;
-}
-
-.check:checked:after {
-    background-color: rgb(0, 0, 0);
-}
-
-.check:checked:after {
-    left: 25px;
-    border: 2px solid var(--clr-naranja);
-}
-
-.check:checked:before {
-    background-color: var(--clr-naranja);
-}
-
-
-/*
+        /* INTERRUPTOR TRADUCCION inicio  */
+        
+        header .traductor {
+            color: var(--clr-naranja);
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 1em;
+            padding-top: 6px;
+        }
+        
+        input {
+            cursor: pointer;
+        }
+        
+        header span {
+            font-size: clamp(.8rem, 1vw, 1rem);
+        }
+        
+        .es {
+            color: var(--clr-naranja);
+            top: 10px;
+        }
+        
+        .en {
+            color: var(--clr-naranja);
+        }
+        
+        .check {
+            position: relative;
+            width: 36px;
+            top: -5px;
+        }
+        
+        .check:before {
+            content: '';
+            position: absolute;
+            width: 36px;
+            height: 18px;
+            background: var(--clr-negro);
+            border-radius: 25px;
+            border: 1.5px solid var(--clr-naranja);
+        }
+        
+        .check:after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background-color: var(--clr-negro);
+            border-radius: 25px;
+            transition: 0.25s;
+            border: 1.5px solid var(--clr-naranja);
+            box-sizing: border-box;
+        }
+        
+        .check:checked:after {
+            background-color: rgb(0, 0, 0);
+        }
+        
+        .check:checked:after {
+            left: 18px;
+            border: 1.5px solid var(--clr-naranja);
+        }
+        
+        .check:checked:before {
+            background-color: var(--clr-naranja);
+        }
+        /*
+ * ─── MAIN ───────────────────────────────────────────────────────────────────────
+ */
+        
+        main {
+            width: 100%;
+        }
+        /*
  * ─── 1 CALL TO ACTION ───────────────────────────────────────────────────────────
  */
-
-.call {
-    min-height: 100vh;
-    display: flex;
-    background: rgba(0, 0, 0, 0.65) url('../imagenes/call/01.JPG') no-repeat center;
-    color: var(--clr-blanco);
-    background-blend-mode: multiply;
-    background-size: cover;
-    background-position: left top;
-    background-repeat: no-repeat;
-    transition: animate 2s 5s;
-    appearance: inherit;
-    animation-name: animate;
-    animation-direction: alternate-reverse;
-    animation-duration: 20s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
-    animation-timing-function: linear;
-}
-
-.call .cartel {
-    padding-top: 15.5em;
-    padding-left: 1rem;
-    padding-right: 4em;
-}
-
-@keyframes animate {
-    0% {
-        background-image: url(../imagenes/call/02.JPG);
-    }
-}
-
-.call .cartel h2,
-.call .cartel h1 {
-    font-size: clamp(2rem, 2.6vw, 5rem);
-    padding-block: 0.1em;
-    padding-inline: 0.4em;
-    background-color: #f75d03;
-    color: var(--clr-negro);
-    font-weight: 900;
-    margin-bottom: .4em;
-    display: inline-block;
-    max-width: 100%;
-}
-
-.call .cartel-cartel p {
-    word-spacing: 1.5;
-    line-height: 1.5;
-    /* padding-top: 1.5rem; */
-    margin-right: 2rem;
-    font-weight: 700;
-    font-size: clamp(.8rem, 1vw, 1.5rem);
-}
-
-.call .cartel h2 {
-    letter-spacing: -0.9px;
-    word-spacing: 0px;
-    text-align: justify;
-}
-
-
-/*
+        
+        .call {
+            min-height: 100vh;
+            display: flex;
+            background: rgba(0, 0, 0, 0.65) no-repeat center center;
+            color: var(--clr-blanco);
+            background-blend-mode: multiply;
+            background-size: cover;
+            background-position: left top;
+            background-repeat: no-repeat;
+            appearance: inherit;
+            animation-name: animate;
+            animation-direction: alternate-reverse;
+            animation-duration: 20s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            animation-timing-function: ease;
+            transition: animate 2s;
+        }
+        
+        .call .cartel {
+            padding-top: 15.5em;
+            padding-left: 1rem;
+            padding-right: 1em;
+        }
+        
+        @keyframes animate {
+            0% {
+                background-image: url(../imagenes/call/01.JPG);
+            }
+            50% {
+                background-image: url(../imagenes/call/01.JPG);
+            }
+            75% {
+                background-image: url(../imagenes/call/02.JPG);
+            }
+            100% {
+                background-image: url(../imagenes/call/02.JPG);
+            }
+        }
+        
+        .call .cartel h2,
+        .call .cartel h1 {
+            font-size: clamp(1rem, 3.6vw, 4.6rem);
+            padding-block: 0.1em;
+            padding-inline: 0.4em;
+            background-color: #f75d03;
+            color: var(--clr-negro);
+            font-weight: 900;
+            margin-bottom: .4em;
+            display: inline-block;
+            max-width: 100%;
+        }
+        
+        .call .cartel-cartel p {
+            word-spacing: 1.5;
+            line-height: 1.5;
+            /* padding-top: 1.5rem; */
+            margin-right: 2em;
+            font-weight: 700;
+            font-size: clamp(.7rem, 2vw, 2.5rem);
+        }
+        
+        .call .cartel h2 {
+            letter-spacing: -0.9px;
+            word-spacing: 0px;
+            /* text-align: justify; */
+        }
+        /*
  * ─── 2 BANNER NEGRO ───────────────────────────────────────────────────────
  */
-
-.banner1 {
-    background: url('../imagenes/fondos/FONDO-NEGRO.png') repeat center top;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    color: var(--clr-blanco);
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 800;
-    padding-block: 4rem;
-    padding-inline: 2rem;
-}
-
-
-/*
+        
+        .banner1 {
+            background: url('../imagenes/fondos/FONDO-NEGRO.png') repeat center top;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            color: var(--clr-blanco);
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 800;
+            padding-block: 4rem;
+            padding-inline: 2rem;
+            background-attachment: fixed;
+        }
+        
+        .banner1 p,
+        .banner2 p {
+            font-size: clamp(.5rem, 2vw, 2rem);
+        }
+        /*
  * ─── 3 CARTELERA NUEVA ──────────────────────────────────────────────────────────
  */
-
-
-/* body {
+        /* body {
             margin: 0;
             padding: 0;
             background-color: black;
         } */
-
-.poster {
-    cursor: pointer;
-    /* height: 60vh; */
-    background-color: black;
-    /* border: 5px red solid; */
-    /*centering hover*/
-    display: flex;
-    flex-flow: wrap;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.poster a {
-    text-decoration: none;
-    color: white;
-}
-
-.container {
-    padding-inline: 10%;
-    background: #e8e8e8;
-    /* margin-top: 20vh;
+        
+        .poster {
+            cursor: pointer;
+            /* height: 60vh; */
+            background-color: black;
+            /* border: 5px red solid; */
+            /*centering hover*/
+            display: flex;
+            flex-flow: wrap;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .poster a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .container {
+            padding-inline: 10%;
+            background: #e8e8e8;
+            /* margin-top: 20vh;
             margin-bottom: 20vh; */
-}
-
-.poster img {
-    z-index: 95;
-    /* margin-top: 10vh; */
-}
-
-.poster-cartel {
-    color: white;
-    opacity: 0;
-    width: 90%;
-    text-align: center;
-    margin: auto 0;
-    height: 100%;
-    width: 100%;
-    z-index: 99;
-    transition: 550ms ease-in-out;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.poster:hover .poster-cartel {
-    padding: 0 1px;
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.95);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.poster-cartel h3 {
-    font-size: clamp(1.1rem, 1.3vw, 1.5rem);
-}
-
-.poster-cartel p {
-    margin-top: .8em;
-    padding: 0 9%;
-    font-size: clamp(.9rem, 1.4vw, 1.5rem);
-    font-weight: 400;
-    text-transform: none;
-}
-
-
-/* FONDOS CARTELERAS */
-
-.poster1 {
-    background-position: center;
-    background-size: contain;
-}
-
-.poster2 {
-    background-position: center;
-    background-size: contain;
-}
-
-.poster3 {
-    background-position: center;
-    background-size: contain;
-}
-
-.poster4 {
-    background-position: center;
-    background-size: contain;
-}
-
-.poster5 {
-    background-position: center;
-    background-size: contain;
-}
-
-.poster6 {
-    background-position: center;
-    background-size: contain;
-}
-
-
-/* FIN FONDO CARTELERA */
-
-.owl-carousel.owl-theme {
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-}
-
-
-/*
+        }
+        
+        .poster img {
+            z-index: 95;
+            /* margin-top: 10vh; */
+        }
+        
+        .poster-cartel {
+            color: white;
+            opacity: 0;
+            width: 90%;
+            text-align: center;
+            margin: auto 0;
+            height: 100%;
+            width: 100%;
+            z-index: 99;
+            transition: 550ms ease-in-out;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .poster:hover .poster-cartel {
+            padding: 0 1px;
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.95);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .poster-cartel h3 {
+            font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+        }
+        
+        .poster-cartel p {
+            margin-top: .8em;
+            padding: 0 9%;
+            font-size: clamp(.9rem, 1.4vw, 1.5rem);
+            font-weight: 400;
+            text-transform: none;
+        }
+        /* FONDOS CARTELERAS */
+        
+        .poster1 {
+            background-position: center;
+            background-size: contain;
+        }
+        
+        .poster2 {
+            background-position: center;
+            background-size: contain;
+        }
+        
+        .poster3 {
+            background-position: center;
+            background-size: contain;
+        }
+        
+        .poster4 {
+            background-position: center;
+            background-size: contain;
+        }
+        
+        .poster5 {
+            background-position: center;
+            background-size: contain;
+        }
+        
+        .poster6 {
+            background-position: center;
+            background-size: contain;
+        }
+        /* FIN FONDO CARTELERA */
+        
+        .owl-carousel.owl-theme {
+            padding-top: 5vh;
+            padding-bottom: 5vh;
+        }
+        /*
 * ───  4 BANNER ANARANJADO ──────────────────────────────────────────────────────────
 */
-
-.banner2 {
-    background: url(../imagenes/fondos/FONDO-NARANJA-2.png);
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    color: var(--clr-negro);
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 800;
-    padding-block: 4rem;
-    padding-inline: 2rem;
-}
-
-
-/*
+        
+        .banner2 {
+            background: url(../imagenes/fondos/FONDO-NARANJA-2.png);
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            color: var(--clr-negro);
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 800;
+            padding-block: 4rem;
+            padding-inline: 2rem;
+            background-attachment: fixed;
+        }
+        /*
  * ─── 5  ESPACIO PUBLICITARIO REPRODUCTOR AUTOMATICO ────────────────────────────────
  */
-
-.publicidad {
-    min-height: 80vh;
-    padding-top: calc(14rem + 2vw);
-    display: flex;
-    background: url(./01.png);
-    color: var(--clr-negro);
-    background-blend-mode: multiply;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: 4s;
-    appearance: inherit;
-    animation-name: publicidad;
-    animation-direction: alternate-reverse;
-    animation-duration: 10s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
-    animation-timing-function: cubic-bezier(0.01, 1.15, 1, 0.99);
-}
-
-@keyframes publicidad {
-    0% {
-        background-image: url(./02.png);
-    }
-    50% {
-        background-image: url(./03.png);
-    }
-    100% {
-        background-image: url(./04.png);
-    }
-}
-
-
-/*
+        
+        .publicidad {
+            min-height: 80vh;
+            padding-top: calc(14rem + 2vw);
+            display: flex;
+            background: url(./01.png);
+            color: var(--clr-negro);
+            background-blend-mode: multiply;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: 4s;
+            appearance: inherit;
+            animation-name: publicidad;
+            animation-direction: alternate-reverse;
+            animation-duration: 10s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            animation-timing-function: cubic-bezier(0.01, 1.15, 1, 0.99);
+        }
+        
+        @keyframes publicidad {
+            0% {
+                background-image: url(./02.png);
+            }
+            50% {
+                background-image: url(./03.png);
+            }
+            100% {
+                background-image: url(./04.png);
+            }
+        }
+        /*
   * ─── 6 CV WISNY - GALERIA ─────────────────────────────────────────────────────────
   */
-
-
-/* CV WISNY BACKGROUNDS */
-
-.slide-bg1 {
-    background: url(../imagenes/assets/cv1.JPG);
-}
-
-.slide-bg2 {
-    background: url(../imagenes/assets/cv2.JPG);
-}
-
-.slide-bg3 {
-    background: url(../imagenes/assets/cv3.JPG);
-}
-
-.slide-bg4 {
-    background: url(../imagenes/assets/cv4.JPG);
-}
-
-.slide-bg5 {
-    background: black
-}
-
-.slide-bg6 {
-    background: blue
-}
-
-.slide {
-    background-position: center center;
-    background-size: cover;
-    background-color: rgba(0, 0, 0, .3);
-    background-repeat: no-repeat;
-    background-blend-mode: multiply;
-    animation: background-color 2s ease;
-}
-
-
-/* ABAJO */
-
-
-/*
- * ─── 7 AFRO TV ──────────────────────────────────────────────────────────────────
+        /* CV WISNY BACKGROUNDS */
+        
+        .slide-bg1 {
+            background: url(../imagenes/assets/cv1.JPG);
+        }
+        
+        .slide-bg2 {
+            background: url(../imagenes/assets/cv2.JPG);
+        }
+        
+        .slide-bg3 {
+            background: url(../imagenes/assets/cv3.JPG);
+        }
+        
+        .slide-bg4 {
+            background: url(../imagenes/assets/cv4.JPG);
+        }
+        
+        .slide-bg5 {
+            background: black
+        }
+        
+        .slide-bg6 {
+            background: blue
+        }
+        
+        .slide {
+            background-position: center center;
+            background-size: cover;
+            background-color: rgba(0, 0, 0, .3);
+            background-repeat: no-repeat;
+            background-blend-mode: multiply;
+            animation: background-color 2s ease;
+        }
+        /* ABAJO */
+        /*
+ * ─── 7 AFRO TV mobile ──────────────────────────────────────────────────────────────────
  */
-
-.afroTV {
-    background: url(../imagenes/fondos/FONDO-AFRO.png) no-repeat;
-    background-size: cover;
-    display: flex;
-    color: var(--clr-blanco);
-    text-transform: none;
-    padding-block: 5%;
-    padding-right: 12%;
-    padding-left: 6%;
-    column-width: 30%;
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-}
-
-.afroTV>div {
-    align-self: center;
-    justify-self: center;
-}
-
-.afroTV .cartel p {
-    font-size: clamp(1rem, 1.6vw, 1.5rem);
-    font-weight: 200;
-    margin-bottom: 20px;
-    word-spacing: 2;
-    line-height: 1.1;
-}
-
-
-/* CV WISNY js*/
-
-
-/* GALERIA IMAGENES fotograd */
-
-.carousel {
-    background: rgba(0, 0, 0, 1);
-    background-blend-mode: multiply;
-    width: 100%;
-    min-height: min(100vh, 80vh);
-    position: relative;
-}
-
-.carousel ul li {}
-
-.carousel>ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: 300ms opacity ease-in-out;
-    transition-delay: 400ms;
-}
-
-.slide>img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 98;
-}
-
-.slide[data-active] {
-    opacity: 1;
-    z-index: 1;
-    transition-delay: 0ms;
-}
-
-.carousel-button {
-    position: absolute;
-    z-index: 2;
-    background: none;
-    border: none;
-    font-size: clamp(4rem, 16vw, 20rem);
-    top: 50%;
-    transform: translateY(-50%);
-    color: rgba(255, 255, 255, .2);
-    cursor: pointer;
-    border-radius: .25rem;
-    padding: 0 .5rem;
-    transition: 500ms ease;
-}
-
-.carousel-button:hover {
-    color: rgba(255, 255, 255, 1);
-}
-
-.carousel-button.prev {
-    left: .01em;
-}
-
-.carousel-button.next {
-    right: .01em;
-}
-
-
-/* */
-
-.cartel-cv {
-    position: absolute;
-    top: 4em;
-    color: white;
-    left: 3em;
-    max-width: 70%;
-    text-transform: none;
-}
-
-.cartel-cv h3 {
-    padding-block: .1em;
-    padding-inline: .3em;
-    display: inline-block;
-    background-color: #0029b1;
-    font-size: clamp(1.9rem, 2vw, 2rem);
-    font-weight: 800;
-}
-
-.cartel-cv h4 {
-    padding-block: .1em;
-    padding-inline: .3em;
-    margin-bottom: .6em;
-    display: inline-block;
-    background-color: #0030ca;
-    font-size: clamp(1.8rem, 1.8vw, 1.9rem);
-    font-weight: 800;
-    letter-spacing: .7;
-}
-
-.cartel-cv p {
-    text-transform: uppercase;
-    line-height: 1;
-    font-weight: 600;
-    margin-bottom: .9em;
-    font-size: clamp(0.7rem, 0.6vw, 2rem);
-    word-spacing: 3px;
-}
-
-
-/* FOOTER */
-
-footer {
-    background: url(../imagenes/fondos/FONDO-NEGRO.png);
-    color: var(--clr-blanco);
-    background-size: cover;
-    justify-content: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding-inline: 3%;
-    padding-block: 3%;
-}
-
-footer>div {
-    align-self: center;
-    justify-self: center;
-    margin-left: .01em;
-    /* border: white 2px solid; */
-}
-
-footer .logo-footer {
-    max-height: 120px;
-    cursor: pointer;
-}
-
-footer div p {
-    font-size: clamp(.7rem, 1.3vw, 1.2rem);
-    font-weight: 300;
-    display: grid;
-    text-transform: none;
-    margin-right: 1em;
-    margin-left: 3em;
-}
-
-footer .iconos {
-    margin-left: 1em;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-right: 6%;
-}
-
-footer .iconos>* {
-    margin-left: 1em;
-}
-
-footer .iconos a {
-    cursor: pointer;
-    transition: transform 250ms ease;
-}
-
-footer .iconos a:hover {
-    transform: scale(.95);
-}
-
-footer .iconos img {
-    max-width: 60%;
-}
-
-
-/* MEDIA QUERY */
-
-@media (min-width: 700px) {
-    .divisor-header {
-        display: none;
-    }
-    .logo {
-        margin-left: 9vw;
-    }
-    .nav--toggle-label {
-        display: none;
-    }
-    header {
-        display: grid;
-        grid-template-columns: 1fr auto minmax(400px, 3fr) 1fr;
-    }
-    /* what's inside () in gridtemplatecol its the space between the h1 logo and the nav menu */
-    header h1 {
-        grid-column: 1 / span 1;
-        padding-left: 12vw;
-        /*grid-column: 2 / 4; va a hacer que el logo ocupe desde la linea 2 hasta la 4, y va a quedar centrado. total de lineas = 5. */
-    }
-    nav {
-        float: right;
-        all: unset;
-        /* it keep every thing we declared in nav previously */
-        display: grid;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        align-items: center;
-        margin: auto;
-    }
-    nav ul {
-        padding-left: 1em;
-    }
-    nav ul li a {
-        color: var(--clr-naranja);
-        font-size: clamp(.8rem, 1.2vw, 1.5rem);
-    }
-    nav ul {
-        display: flex;
-        align-items: center;
-    }
-    nav li {
-        /* min-width: 98px; */
-        margin-bottom: 0;
-        margin-right: .1em;
-    }
-    nav a {
-        opacity: 1;
-        position: relative;
-    }
-    nav a::before {
-        content: '';
-        display: block;
-        height: 5px;
-        background: var(--clr-primary-600);
-        position: absolute;
-        top: -.5em;
-        /* left: 0; */
-        /* right: 0; */
-        transform: scale(0, 1);
-        transition: transform ease-in-out 250ms;
-        transform-origin: left;
-    }
-    nav a:hover::before {
-        transform: scale(1, 1);
-    }
-    .traductor {
-        padding-left: 2vw;
-        font-size: clamp(1rem, 1vw, 1.5rem);
-        margin-top: -3px;
-        padding-right: 7vw;
-        max-width: 248px;
-        position: absolute;
-        right: 0;
-    }
-    /* CALL MEDIAQUERIES */
-    .call .cartel {
-        padding-left: 12%;
-    }
-    /* .call .cartel p {
-        text-shadow: 1px 1px rgba(0, 0, 0, 1);
-    } */
-    .call .cartel p {
-        font-size: 1rem;
-        margin-right: 45%;
-        line-height: 1.2;
-        word-spacing: 5px;
-    }
-    /* BANNER NEGRO 1  */
-    .banner1 {
-        padding-inline: 16%;
-    }
-    .banner1 p {
-        line-height: 1.5;
-    }
-    /* GALERIA CARTELERAS */
-    /* BANNER ANARANJADO 2 */
-    .banner2 {
-        padding-inline: 12%;
-    }
-    .banner2 p {
-        line-height: 1.3;
-        font-weight: 800;
-        font-size: 1.5rem;
-    }
-    /* CARTEL CV WISNY */
-    .cartel-cv {
-        top: 9em;
-        left: 15%;
-    }
-    .cartel-cv h3 {
-        margin-bottom: 1rem;
-    }
-    .cartel-cv p {
-        margin-right: 20%;
-    }
-}
+        
+        .afroTV {
+            background: url(../imagenes/fondos/FONDO-AFRO.png) no-repeat;
+            background-size: cover;
+            color: var(--clr-blanco);
+            text-transform: none;
+            padding-block: 5%;
+            text-align: center;
+            padding-inline: 1.2em;
+        }
+        
+        .afroTV>div {
+            align-self: center;
+            justify-self: center;
+        }
+        
+        .afroTV img {
+            max-width: 45%;
+        }
+        
+        .afroTV .cartel p {
+            font-size: clamp(.8rem, 1.6vw, 2.5rem);
+            font-weight: 200;
+            margin-bottom: 2em;
+            word-spacing: 2;
+            line-height: 1.1;
+            padding-inline: 1em;
+        }
+        /* CV WISNY js*/
+        /* GALERIA IMAGENES fotograd */
+        
+        .carousel {
+            background: rgba(0, 0, 0, 1);
+            background-blend-mode: multiply;
+            width: 100%;
+            min-height: min(100vh, 80vh);
+            position: relative;
+        }
+        
+        .carousel ul li {}
+        
+        .carousel>ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: 300ms opacity ease-in-out;
+            transition-delay: 400ms;
+        }
+        
+        .slide>img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 98;
+        }
+        
+        .slide[data-active] {
+            opacity: 1;
+            z-index: 1;
+            transition-delay: 0ms;
+        }
+        
+        .carousel-button {
+            position: absolute;
+            z-index: 2;
+            background: none;
+            border: none;
+            font-size: clamp(4rem, 16vw, 20rem);
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, .2);
+            cursor: pointer;
+            border-radius: .25rem;
+            padding: 0 .5rem;
+            transition: 500ms ease;
+        }
+        
+        .carousel-button:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+        
+        .carousel-button.prev {
+            left: .01em;
+        }
+        
+        .carousel-button.next {
+            right: .01em;
+        }
+        /* */
+        
+        .cartel-cv {
+            position: absolute;
+            top: 4em;
+            color: white;
+            left: 2em;
+            max-width: 70%;
+            text-transform: none;
+        }
+        
+        .cartel-cv h3 {
+            padding-block: .1em;
+            padding-inline: .3em;
+            display: inline-block;
+            background-color: #0029b1;
+            font-size: clamp(1rem, 3.4vw, 4.3rem);
+            font-weight: 800;
+        }
+        
+        .cartel-cv h4 {
+            padding-block: .1em;
+            padding-inline: .3em;
+            margin-bottom: .6em;
+            display: inline-block;
+            background-color: #0029b1;
+            font-size: clamp(1rem, 3.4vw, 4.3rem);
+            font-weight: 800;
+            letter-spacing: .7;
+        }
+        
+        .cartel-cv p {
+            text-transform: uppercase;
+            line-height: 1;
+            font-weight: 600;
+            margin-bottom: .7em;
+            /* font-size: clamp(.5rem, 1.8vw, 2rem); */
+            font-size: clamp(.8rem, 1.6vw, 2.5rem);
+            word-spacing: 3px;
+        }
+        /* FOOTER */
+        
+        footer {
+            background: url(../imagenes/fondos/FONDO-NEGRO.png);
+            color: var(--clr-blanco);
+            background-size: cover;
+            padding-inline: 3%;
+            padding-block: 3%;
+            text-align: center;
+        }
+        
+        footer>div {
+            align-self: center;
+            justify-self: center;
+            margin-left: .01em;
+            /* border: white 2px solid; */
+        }
+        
+        footer .logo-footer {
+            cursor: pointer;
+            margin-bottom: 2em;
+            padding-top: 1.5em;
+        }
+        
+        footer div p {
+            font-size: clamp(0.6rem, 1.6vw, 1.9rem);
+            /* font-size: clamp(.7rem, 1.3vw, 1.2rem); */
+            font-weight: 300;
+            display: grid;
+            text-transform: none;
+            margin-inline: 2em;
+            margin-bottom: 3.5em;
+        }
+        
+        footer .iconos {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            margin-bottom: 2em;
+        }
+        
+        footer .iconos a {
+            cursor: pointer;
+            transition: transform 250ms ease;
+        }
+        
+        footer .iconos a:hover {
+            transform: scale(.95);
+        }
+        
+        footer .iconos img {
+            max-height: 10vw;
+        }
+        /* MEDIA QUERY */
+        
+        @media (min-width: 730px) {
+            .divisor-header {
+                display: none;
+            }
+            .logo {
+                margin-left: 9vw;
+            }
+            .nav--toggle-label {
+                display: none;
+            }
+            header {
+                display: grid;
+                grid-template-columns: 1fr auto minmax(400px, 3fr) 1fr;
+            }
+            /* what's inside () in gridtemplatecol its the space between the h1 logo and the nav menu */
+            header h1 {
+                grid-column: 1 / span 1;
+                padding-left: 12vw;
+                /*grid-column: 2 / 4; va a hacer que el logo ocupe desde la linea 2 hasta la 4, y va a quedar centrado. total de lineas = 5. */
+            }
+            nav {
+                all: unset;
+                /* it keep every thing we declared in nav previously */
+                align-items: center;
+                margin: auto;
+                position: absolute;
+                right: 13%;
+                top: 40%;
+            }
+            nav ul {
+                padding-left: 1em;
+            }
+            nav ul li a {
+                color: var(--clr-naranja);
+                font-size: clamp(.8rem, 1.2vw, 1.5rem);
+            }
+            nav ul {
+                display: flex;
+                align-items: center;
+            }
+            nav li {
+                /* min-width: 98px; */
+                margin-bottom: 0;
+                margin-right: .1em;
+            }
+            nav a {
+                opacity: 1;
+                position: relative;
+            }
+            nav a::before {
+                content: '';
+                display: block;
+                height: 5px;
+                background: var(--clr-primary-600);
+                position: absolute;
+                top: -.5em;
+                /* left: 0; */
+                /* right: 0; */
+                transform: scale(0, 1);
+                transition: transform ease-in-out 250ms;
+                transform-origin: left;
+            }
+            nav a:hover::before {
+                transform: scale(1, 1);
+            }
+            .traductor {
+                padding-left: 2vw;
+                font-size: clamp(1rem, 1vw, 1.5rem);
+                margin-top: -4px;
+                padding-right: 7vw;
+                /* max-width: 248px; */
+                position: absolute;
+                right: 0;
+            }
+            /* CALL MEDIAQUERIES */
+            .call .cartel {
+                padding-left: 12%;
+            }
+            .call .cartel p {
+                text-shadow: 1px 2px rgba(0, 0, 0, 1) 2px;
+            }
+            .call .cartel p {
+                margin-right: 45%;
+                line-height: 1.2;
+                word-spacing: 5px;
+            }
+            /* BANNER NEGRO 1  */
+            .banner1 {
+                padding-inline: 16%;
+            }
+            .banner1 p {
+                line-height: 1.5;
+            }
+            /* GALERIA CARTELERAS */
+            /* BANNER ANARANJADO 2 */
+            .banner2 {
+                padding-inline: 12%;
+            }
+            .banner2 p {
+                line-height: 1.3;
+                font-weight: 800;
+            }
+            /*
+     * ─── 7 AFRO TV DESKTOP ────────────────────────────────────────────────────────────
+     */
+            .afroTV {
+                display: grid;
+                grid-template-columns: 2fr 3fr;
+                text-align: left;
+                padding-right: 12%;
+                padding-left: 6%;
+            }
+            .afroTV img {
+                max-width: 100%;
+            }
+            /* CARTEL CV WISNY */
+            .cartel-cv {
+                top: 9em;
+                left: 12%;
+            }
+            .cartel-cv h3 {
+                margin-bottom: 1rem;
+            }
+            .cartel-cv p {
+                margin-right: 20%;
+            }
+            /*
+      * ─── 9 FOOTER DESKTOP ───────────────────────────────────────────────────────────
+     */
+            footer {
+                justify-content: center;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            footer .logo-footer {
+                height: 10vw;
+            }
+            footer div p {
+                margin-left: 3em;
+                margin-right: 1em;
+                text-align: left;
+            }
+            footer .iconos>* {
+                margin-left: 1em;
+            }
+            footer .iconos {
+                margin-left: 1em;
+                margin-right: 6%;
+                margin-bottom: 0;
+            }
+            footer .iconos img {
+                /* max-width: 60%; */
+            }
+            footer div p {
+                margin-bottom: 0;
+            }
+        }
