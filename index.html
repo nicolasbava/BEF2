@@ -1,34 +1,39 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/normalize.css">
 
+
     <title>Black Existence Films</title>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <!-- HEADER NAVIGATOR -->
+    <!-- 0 HEADER NAVIGATOR -->
     <header>
-        <div></div>
-
-        <h1>
-            <a href="#home"><img src="./imagenes/LOGO-MENU.png" alt="BLACK EXISTENCE FILMS logo"></a>
-        </h1>
+        <div class="divisor-header"></div>
+        <a href="#home" class="logo"><img src="./imagenes/LOGO-MENU.png" alt="BLACK EXISTENCE FILMS logo"></a>
         <input type="checkbox" name="nav--toggle" class="nav--toggle" id="nav--toggle">
         <nav>
             <ul>
-                <li><a href="#home">HOME</a></li>
-                <li><a href="#cartelera">GALLERY</a></li>
-                <li><a href="#loquehacemos">WE</a></li>
+                <li><a href="#home">INGLES</a></li>
+                <li><a href="#cartelera">CARTELERA</a></li>
+                <li><a href="#loquehacemos">NOSOTROS</a></li>
                 <li><a href="#cvwisny">CV WISNY</a></li>
                 <li><a href="#afroTV">AFRO TV</a></li>
-                <li><a href="#contacto">CONTACT</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
 
             </ul>
         </nav>
@@ -43,94 +48,145 @@
 
 
     </header>
-    <section class="divisor">
 
-    </section>
-
-    <!-- PRIMERA PARTE -->
+    <!-- 1 CALL -->
     <section class="call" id="home">
-        <div class="cartel">
-            <h2>Black Existencia Films is an </h2>
-            <h2>independent Afro-descendant </h2>
-            <h2>audiovisual production company</h2>
-            <div class="cartel-cartel">
-                <p>created on May 11, 2017 by Wisny Dorce, an independent filmmaker and producer with experience in the field since 2014</p>
+        <div class="cartel" data-aos="fade-right" data-aos-duration="1500">
+            <h1>Black Existence Films </h1>
+            <h2>es una productora audiovisual </h2>
+            <h2>independiente de afrodescendiente</h2>
+            <div class="cartel-cartel" data-aos="fade" data-aos-delay="1000">
+                <p>Creada el 11 de mayo de 2017 por Wisny Dorce, cineasta y productor de cine independiente con experiencia en el medio desde 2014.</p>
             </div>
         </div>
     </section>
 
-    <!-- BANNER NEGRO -->
+    <!-- 2 BANNER NEGRO -->
     <section class="banner1">
-        <p>In Black Existencia Films we promote the socioeconomic inclusion and culture of Afro-descendant immigrants in the world, providing job opportunities for actors, technicians and audiovisual personnel of African descent and African immigrants and
-            generating content to reach the community, transmit messages and thus make visible the realities lived. </p>
+        <p data-aos-delay="300" data-aos="fade" data-aos-duration="1500">En Black Existencia Films promovemos la inclusión socioeconómica y la cultura de los afrodescendientes en el mundo, brindando oportunidades laborales a actores, técnicos y personal audiovisual afrodescendiente y afro inmigrante y generando contenidos
+            para llegar a las comunidades, transmitir mensajes y así visibilizar las realidades vividas. </p>
 
     </section>
 
-    <!-- CARTELERA - CARROUSELL FUNCIONANDO -->
+    <!-- 3 PORTFOLIO CARTELERA NUEVO OWLS -->
 
-    <section class="slider" id="cartelera">
-        <div class="slider_container container" id="loquehacemos">
-            <img src="./imagenes/assets/arrowi.svg" class="slider_arrow" id="before" alt="">
-            <!-- flecha anterior -->
+    <div class="container">
+        <div class="owl-carousel owl-theme hijos">
+            <a href="https://www.youtube.com/watch?v=eCXPBnqyeXU" target="_blank">
+                <div class="poster poster1">
+                    <img src="./imagenes/cartelera/01.png" alt="">
 
-            <section class="slider_body slider_body-show" id="cv1" data-id="1">
-                <img src="./imagenes/cartelera/01.JPG" alt="">
-                <img src="./imagenes/cartelera/02.JPG" alt="">
-                <img src="./imagenes/cartelera/03.JPG" alt="">
-            </section>
+                    <div class="poster-cartel ">
+                        <h3>LOS HERMANOS AFRO</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi aperiam, rerum fugit harum totam ea, deleniti quaerat sequi, alias possimus inventore! Neque praesentium natus cupiditate minus totam maxime assumenda sed.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="poster poster2">
+                    <img src="./imagenes/cartelera/02.png" alt="">
+                    <div class="poster-cartel">
+                        <h3> 2 LOS HERMANOS AFRO</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi aperiam, rerum fugit harum totam ea, deleniti quaerat sequi, alias possimus inventore! Neque praesentium natus cupiditate minus totam maxime assumenda sed.</p>
+                    </div>
+                </div>
+            </a>
+            <div class="poster poster3">
+                <img src="./imagenes/cartelera/03.png" alt="">
 
-            <section class="slider_body" data-id="2">
-                <img src="./imagenes/cartelera/04.JPG" alt="">
-                <img src="./imagenes/cartelera/05.JPG" alt="">
-                <img src="./imagenes/cartelera/06.JPG" alt="">
-            </section>
+                <div class="poster-cartel">
+                    <h3> 3 LOS HERMANOS AFRO</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi aperiam, rerum fugit harum totam ea, deleniti quaerat sequi, alias possimus inventore! Neque praesentium natus cupiditate minus totam maxime assumenda sed.</p>
+                </div>
+            </div>
+            <div class="poster poster4">
+                <img src="./imagenes/cartelera/04.png" alt="">
 
+                <div class="poster-cartel">
+                    <h3> 4 LOS HERMANOS AFRO</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi aperiam, rerum fugit harum totam ea, deleniti quaerat sequi, alias possimus inventore! Neque praesentium natus cupiditate minus totam maxime assumenda sed.</p>
+                </div>
+            </div>
+            <div class="poster poster5">
+                <img src="./imagenes/cartelera/05.png" alt="">
 
-            <!-- flecha posterior -->
-            <img src="./imagenes/assets/arrowd.svg" class="slider_arrow" id="after" alt="">
+                <div class="poster-cartel">
+                    <h3> 5 LOS HERMANOS AFRO</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi aperiam, rerum fugit harum totam ea, deleniti quaerat sequi, alias possimus inventore! Neque praesentium natus cupiditate minus totam maxime assumenda sed.</p>
+                </div>
+            </div>
+            <div class="poster poster6">
+                <img src="./imagenes/cartelera/06.png" alt="">
+
+                <div class="poster-cartel">
+                    <h3> 6 LOS HERMANOS AFRO</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi aperiam, rerum fugit harum totam ea, deleniti quaerat sequi, alias possimus inventore! Neque praesentium natus cupiditate minus totam maxime assumenda sed.</p>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
 
+    <!-- 4 CARROUSEL CARTELERAS NUEVO final -->
     <section class="banner2">
-        <p>In Black Existencia Films we promote the socioeconomic inclusion and culture of Afro-descendant immigrants in the world, providing job opportunities for actors, technicians and audiovisual personnel of African descent and African immigrants and
-            generating content to reach the community, transmit messages and thus make visible the realities lived. </p>
+        <p data-aos-delay="300" data-aos="fade" data-aos-duration="1500">En Black Existencia Films promovemos la inclusión socioeconómica y la cultura de los afrodescendientes en el mundo, brindando oportunidades laborales a actores, técnicos y personal audiovisual afrodescendiente y afro inmigrante y generando contenidos
+            para llegar a las comunidades, transmitir mensajes y así visibilizar las realidades vividas. </p>
     </section>
 
 
-    <!-- PUBLICIDAD FONDOS AUTOMATICOS FUNCIONANDO -->
+    <!-- 5 PUBLICIDAD FONDOS AUTOMATICOS FUNCIONANDO -->
     <div class="publicidad">
 
     </div>
 
-    <!-- CV WISNY -->
+    <!-- 6 CV WISNY -->
     <section aria-label="Newest Photos" id="cvwisny">
         <div class="carousel" data-carousel>
             <button class="carousel-button prev" data-carousel-button="prev">&#8249;</button>
             <button class="carousel-button next" data-carousel-button="next">&#8250;</button>
             <ul data-slides>
 
-                <li class="slide" data-active>
-                    <img src="./imagenes/assets/cv2.JPG" alt="Nature Image #1">
-                    <div class="cartel-cv">
+                <li class="slide slide-bg1" data-active>
+                    <div class="cartel-cv ">
                         <h3>BLACK EXISTENCE CV OF WISNY DORCE</h3>
                         <h4>BLACK EXISTENCE FILMS' CEO</h4>
-                        <p>My real name Wisny Dorce is Wisner Dorcelus but I am known by my artistic name which is Wisny Dorce.</p>
+                        <p>Mi nombre real de Wisny Dorce es Wisner Dorcelus pero me</p>
+                        <p> conocen por mi nombre artístico que es Wisny Dorce. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, in necessitatibus id exercitationem commodi, </p>
                     </div>
                 </li>
 
-                <li class="slide">
-                    <img src="./imagenes/assets/cv1.JPG" alt="Nature Image #2">
+                <li class="slide slide-bg2">
                     <div class="cartel-cv">
                         <h3>MAS INFO</h3>
-                        <p>I was born in a city called Kenscoff, Robin neighborhood is a city of Haiti which is located in the district of Port-au-Prince, in the West department of the country.</p>
+                        <p>aca pongo mas contenido tipo de la historia de wisny</p>
                     </div>
                 </li>
 
-                <li class="slide">
-                    <img src="./imagenes/assets/cv3.JPG" alt="Nature Image #3">
+                <li class="slide slide-bg3">
                     <div class="cartel-cv">
                         <h3>MUCHA MAS INFO SOBRE WISNY</h3>
-                        <p>In 2017 he created Black Existencia Films, the first afro audiovisual production company in Argentina. From the production company we have made several short films, medium-length films, feature films and video clips. </p>
+                        <p>aca pongo mas contenido tipo de la historia de wisny</p>
+                    </div>
+                </li>
+
+                <li class="slide slide-bg4">
+                    <div class="cartel-cv">
+                        <h3>MUCHA MAS INFO SOBRE WISNY</h3>
+                        <p>aca pongo mas contenido tipo de la historia de wisny</p>
+                    </div>
+                </li>
+
+                <li class="slide slide-bg5">
+                    <div class="cartel-cv">
+                        <h3>MUCHA MAS INFO SOBRE WISNY 5</h3>
+                        <p>aca pongo mas contenido tipo de la historia de wisny</p>
+                    </div>
+                </li>
+
+                <li class="slide slide-bg6">
+                    <div class="cartel-cv">
+                        <h3>MUCHA MAS INFO SOBRE WISNY 6</h3>
+                        <p>aca pongo mas contenido tipo de la historia de wisny</p>
                     </div>
                 </li>
             </ul>
@@ -138,19 +194,19 @@
     </section>
 
 
-    <!-- AFRO TV -->
+    <!-- 7 AFRO TV -->
     <section class="afroTV" id="afroTV">
 
-        <div><img src="./imagenes/AFRO.png" alt="Logo Afro TV">
+        <div data-aos="fade" data-aos-duration="1500"><img src="./imagenes/AFRO.png" alt="Logo Afro TV">
         </div>
-        <div class="cartel">
-            <p> <b>Afro Tv is an independent media whose mission is to disseminate the culture of all communities and especially minorities.</b>Afro Tv is the voice of those who are without you and no matter where in the world is the good news and bad news.
-                Our duty is to inform without commenting and without giving our opinions of what happened. You will watch what happened exactly as it happened.</p>
-            <p> <b> News presentation, sports, social awareness broadcasting. Fashion. Art. Music and History. All in one space.</b></p>
+        <div class="cartel" data-aos="fade" data-aos-duration="1500" data-aos-delay="300">
+            <p> <b> Afro Tv es un medio de comunicación independiente cuya misión es difundir la cultura de todas las comunidades y especialmente de las minorías.</b> Afro Tv es la voz de los que están sin ti y no importa en qué parte del mundo se encuentren
+                las buenas y las malas noticias. Nuestro deber es informar sin comentar y sin dar nuestras opiniones de lo sucedido. Verás lo que ha pasado exactamente como ha sucedido.</p>
+            <p> <b> Presentación de noticias, deportes, difusión de la conciencia social. Moda . Arte . Música e Historia . Todo en un solo espacio</b></p>
         </div>
     </section>
 
-    <!-- GALERIA FOTORAFICA / POST AFROTV-->
+    <!-- 8 GALERIA FOTORAFICA / POST AFROTV-->
 
     <section aria-label="Newest Photos">
         <div class="carousel" data-carousel>
@@ -163,7 +219,7 @@
                 </li>
 
                 <li class="slide">
-                    <img src="../imagenes/galeria/02.jpg" alt="Nature Image #2">
+                    <img src="./imagenes/galeria/02.jpg" alt="Nature Image #2">
                 </li>
 
                 <li class="slide">
@@ -185,9 +241,11 @@
         </div>
     </section>
 
+    <!-- 9 FOOTER -->
+
     <footer>
         <div>
-            <img src="./imagenes/BLACK_EXISTENCE.png" alt="Logo Black Existence con texto" class="logo">
+            <img src="./imagenes/BLACK_EXISTENCE.png" alt="Logo Black Existence con texto" class="logo-footer">
         </div>
         <div class="cartel">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi nam quas pariatur. Ea, quis eveniet! Deleniti est alias consequatur iusto, fugiat magni velit voluptates! Eos est excepturi dicta deleniti quas.</p>
@@ -208,7 +266,40 @@
         </div>
     </footer>
 
+
+    <!-- SCRIPTS JAVASCRIPT CAROUSELS -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script src="./js/app.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
+
+        AOS.init();
+    </script>
 </body>
 
 </html>
